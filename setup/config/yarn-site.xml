@@ -68,7 +68,7 @@
     </property>
 	<property>
       <name>yarn.log.server.url</name>
-      <value>http://test:19888/jobhistory/logs</value>
+  <value>http://test:19888/jobhistory/logs</value>
     </property>
 	<property>
       <name>yarn.log.server.web-service.url</name>
