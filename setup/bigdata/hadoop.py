@@ -138,8 +138,9 @@ def exeCheckServerProcess():
                 log.warn(node + ' 节点的 ' + server + ' 服务未运行')
                 start_hadoop(node, server.lower())
             else:
-                log.info(server + "服务正在运行")
+                log.info(node + ' 节点 ' + server + "服务正在运行\n")
     time_util.sleep(30)
+    log.info('开始测试hadoop服务是否可用')
     checkService()
 
 
@@ -147,15 +148,15 @@ def start_hadoop(ip, name):
     name = name.lower()
     HADOOP_HOME = os.getenv('HADOOP_HOME')
     if ('secondarynamenodenamenodedatanode'.find(name) >= 0):
-        log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务')
+        log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务\n')
         _shell = 'ansible client -l ' + ip + ' -a "' + HADOOP_HOME + '/sbin/hadoop-daemon.sh start ' + name + '"'
         exeCmd.run(_shell)
     elif ('resourcemanagernodemanager'.find(name) >= 0):
-        log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务')
+        log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务\n')
         _shell = 'ansible client -l ' + ip + ' -a "' + HADOOP_HOME + '/sbin/yarn-daemon.sh start ' + name + '"'
         exeCmd.run(_shell)
     else:
-        log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务')
+        log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务\n')
         _shell = 'ansible client -l ' + ip + ' -a "' + HADOOP_HOME + '/sbin/mr-jobhistory-daemon.sh start historyserver"'
         exeCmd.run(_shell)
 

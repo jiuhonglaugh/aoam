@@ -4,7 +4,7 @@
 import logging
 from setup.utils import config_util
 
-conf = config_util.getDict('LOG-CONF')
+conf = config_util.getDict('log-conf')
 
 
 class logger:

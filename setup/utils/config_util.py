@@ -9,7 +9,7 @@ import os
 """
 
 root_dir = os.path.dirname(os.path.abspath('.'))
-configPath = os.path.join(root_dir, "config/logger.conf")
+configPath = os.path.join(root_dir, "config/application.properties")
 ###必须使用RawConfigParser()，否则会报错
 cf = configparser.RawConfigParser()
 # 读取配置文件，如果写文件的绝对路径，就可以不用os模块
