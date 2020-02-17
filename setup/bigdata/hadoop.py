@@ -12,9 +12,8 @@ from setup.utils import xml_util
 from setup.utils import exeCmd
 
 log = logger()
-config = configparser.ConfigParser()
-config.read('../config/bigdata.conf')
-client = InsecureClient(config['hadoop']['name.node.ui'], user=config['hadoop']['name.node.user'], root='/')
+hdfsXml = xml_util.getXml('../config/hdfs-site.xml', 'property')
+client = InsecureClient('http://' + hdfsXml['dfs.http.address'], user='hadoop', root='/')
 
 '''
 创建hdfs文件夹
@@ -49,8 +48,8 @@ def _delete(filePath):
 def checkService():
     nowTime = time_util.getTime()
     data = nowTime + ':  此文件是自动化运维软件测试使用，用来判断hadoop集群是否正常工作的一项指标，请勿删除\n'
-    hdfspath = config['hadoop']['name.node.path']
-    fileName = config['hadoop']['name.node.file.name']
+    hdfspath = '/aoam/'
+    fileName = 'aoam.txt'
     _createFile(hdfspath, fileName, data)
 
 
@@ -131,7 +130,6 @@ def checkServerProcess():
 
 
 def exeCheckServerProcess():
-    checkService()
     serverList = checkServerProcess()
     for node in serverList:
         content = exeCmd.Popen('ansible client -l ' + node + ' -a "jps"')
@@ -141,6 +139,8 @@ def exeCheckServerProcess():
                 start_hadoop(node, server.lower())
             else:
                 log.info(server + "服务正在运行")
+    time_util.sleep(30)
+    checkService()
 
 
 def start_hadoop(ip, name):

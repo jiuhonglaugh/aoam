@@ -1,2 +1,0 @@
-xxxx
-172.10.22.57 | SUCCESS | rc=0 >> hadoop [35m SSH已经生成 [0m
