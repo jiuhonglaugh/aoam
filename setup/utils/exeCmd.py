@@ -32,4 +32,9 @@ def getstatusgetoutput(cmd):
 
 
 def Popen(cmd):
-    result = sbp.Popen(cmd)
+    result = sbp.Popen(cmd, shell=True, stdout=sbp.PIPE)
+    return str(result.stdout.read(), 'utf-8')
+
+
+def run(cmd):
+    sbp.run(cmd, shell=True)

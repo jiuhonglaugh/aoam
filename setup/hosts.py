@@ -6,7 +6,6 @@ import configparser
 import re
 import subprocess
 import os
-import threading
 import time
 
 

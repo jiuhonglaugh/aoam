@@ -3,10 +3,13 @@
 
 from hdfs import InsecureClient
 import configparser
+import os
+import re
 from setup.utils.logger import logger
 from setup.utils import time_util
 from setup.utils import file_util
 from setup.utils import xml_util
+from setup.utils import exeCmd
 
 log = logger()
 config = configparser.ConfigParser()
@@ -127,11 +130,35 @@ def checkServerProcess():
     return serverProcess
 
 
-def updateDict(olds, news):
-    for old in news:
-        print(old)
+def exeCheckServerProcess():
+    checkService()
+    serverList = checkServerProcess()
+    for node in serverList:
+        content = exeCmd.Popen('ansible client -l ' + node + ' -a "jps"')
+        for server in serverList.get(node).split(','):
+            if (len(re.findall(server, content)) < 1):
+                log.warn(node + ' 节点的 ' + server + ' 服务未运行')
+                start_hadoop(node, server.lower())
+            else:
+                log.info(server + "服务正在运行")
+
+
+def start_hadoop(ip, name):
+    name = name.lower()
+    HADOOP_HOME = os.getenv('HADOOP_HOME')
+    if ('secondarynamenodenamenodedatanode'.find(name) >= 0):
+        log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务')
+        _shell = 'ansible client -l ' + ip + ' -a "' + HADOOP_HOME + '/sbin/hadoop-daemon.sh start ' + name + '"'
+        exeCmd.run(_shell)
+    elif ('resourcemanagernodemanager'.find(name) >= 0):
+        log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务')
+        _shell = 'ansible client -l ' + ip + ' -a "' + HADOOP_HOME + '/sbin/yarn-daemon.sh start ' + name + '"'
+        exeCmd.run(_shell)
+    else:
+        log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务')
+        _shell = 'ansible client -l ' + ip + ' -a "' + HADOOP_HOME + '/sbin/mr-jobhistory-daemon.sh start historyserver"'
+        exeCmd.run(_shell)
 
 
 if __name__ == '__main__':
-    checkService()
-    print(checkServerProcess())
+    exeCheckServerProcess()
