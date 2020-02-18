@@ -1,0 +1,85 @@
+2020-02-17 14:31:03,622  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-17 14:31:03,622  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+2020-02-17 14:31:03,646  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-17 14:31:03,646  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+2020-02-17 14:31:03,669  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-17 14:31:03,669  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+2020-02-17 14:31:03,692  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-17 14:31:03,692  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+2020-02-17 14:31:03,720  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-17 14:31:03,720  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+2020-02-17 14:31:03,743  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-17 14:31:03,743  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+2020-02-17 15:56:56,243  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-17 15:56:56,243  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+2020-02-17 15:56:56,262  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-17 15:56:56,266  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+2020-02-17 15:56:56,285  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-17 15:56:56,285  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+2020-02-17 15:56:56,309  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-17 15:56:56,309  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+2020-02-17 15:56:56,332  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-17 15:56:56,332  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+2020-02-17 15:56:56,356  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-17 15:56:56,356  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+2020-02-17 15:58:14,832  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-17 15:58:14,832  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+2020-02-17 15:58:14,860  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-17 15:58:14,860  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+2020-02-17 15:58:14,887  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-17 15:58:14,887  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+2020-02-17 15:58:14,914  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-17 15:58:14,914  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+2020-02-17 15:58:14,942  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-17 15:58:14,942  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+2020-02-17 15:58:14,973  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-17 15:58:14,973  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+2020-02-17 15:59:33,654  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-17 15:59:33,654  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+2020-02-17 15:59:33,677  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-17 15:59:33,677  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+2020-02-17 15:59:33,700  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-17 15:59:33,700  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+2020-02-17 15:59:33,725  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-17 15:59:33,725  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+2020-02-17 15:59:33,744  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-17 15:59:33,744  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+2020-02-17 15:59:33,768  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-17 15:59:33,768  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+2020-02-17 16:14:44,852  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-17 16:14:44,852  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+2020-02-17 16:14:44,876  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-17 16:14:44,876  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+2020-02-17 16:14:44,899  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-17 16:14:44,899  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+2020-02-17 16:14:44,922  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-17 16:14:44,922  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+2020-02-17 16:14:44,946  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-17 16:14:44,946  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+2020-02-17 16:14:44,965  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-17 16:14:44,965  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+2020-02-17 17:08:19,483  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-17 17:08:19,483  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+
+2020-02-17 17:08:19,507  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-17 17:08:19,507  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+
+2020-02-17 17:08:19,534  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-17 17:08:19,534  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+
+2020-02-17 17:08:19,558  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-17 17:08:19,558  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+
+2020-02-17 17:08:19,577  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-17 17:08:19,577  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+
+2020-02-17 17:08:19,600  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-17 17:08:19,600  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+
+2020-02-17 19:03:13,042  logger.py : WARNING  test 节点的 QuorumPeerMain 服务未运行
+2020-02-17 19:06:21,677  logger.py : WARNING  test 节点的 QuorumPeerMain 服务未运行
+2020-02-17 19:06:21,678  logger.py : WARNING  开始启动 test 节点的 QuorumPeerMain 服务
+
+2020-02-18 09:05:12,713  logger.py : WARNING  test 节点的 HRegionServer 服务未运行
+2020-02-18 09:05:12,713  logger.py : WARNING  开始启动 test 节点的 hregionserver 服务
+

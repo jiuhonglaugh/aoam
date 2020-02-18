@@ -26,6 +26,7 @@ def startZk(host, server):
     exeCmd.run(_shell)
 
 
+
 def checkServerProcess():
     hostAndPorts = conf.get('hosts')
     serverlist = getQuorumPeerMain(hostAndPorts.split(','))
