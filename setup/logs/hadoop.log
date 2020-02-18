@@ -83,3 +83,11 @@
 2020-02-18 09:05:12,713  logger.py : WARNING  test 节点的 HRegionServer 服务未运行
 2020-02-18 09:05:12,713  logger.py : WARNING  开始启动 test 节点的 hregionserver 服务
 
+2020-02-18 13:57:39,134  logger.py : WARNING  test 节点的 QuorumPeerMain 服务未运行
+2020-02-18 13:57:39,138  logger.py : WARNING  开始启动 test 节点的 QuorumPeerMain 服务
+
+2020-02-18 13:58:38,254  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2,org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 13:58:38,254  logger.py : WARNING  开始启动 test 节点的 QuorumPeerMain 服务
+
+2020-02-18 14:00:45,273  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 14:00:45,273  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
