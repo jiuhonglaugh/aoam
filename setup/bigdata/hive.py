@@ -36,12 +36,12 @@ def getHiveMetaStore(keys, dict):
 def startHive(host, server):
     HIVE_HOME = os.getenv('HIVE_HOME')
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
-    _shell = 'ansible client -l {host} -a "{HIVE_HOME}/bin/hive --service '.format(host=host, HIVE_HOME=HIVE_HOME)
-    if "org.apache.hadoop.hive.metastore.HiveMetaStore".find(server):
-        _shell = _shell + 'metastore > {HIVE_HOME}/metastore.log 2>&1 &"'.format(HIVE_HOME=HIVE_HOME)
+    _shell = 'ansible client -l {host} -a "{HIVE_HOME}/'.format(host=host, HIVE_HOME=HIVE_HOME)
+    if "org.apache.hadoop.hive.metastore.HiveMetaStore".find(server) >= 0:
+        _shell = _shell + '{scriptPath}"'.format(scriptPath=conf.get('hive.metastore.start'))
         exeCmd.run(_shell)
     else:
-        _shell = _shell + 'hiveserver2 > {HIVE_HOME}/hiveserver2.log 2>&1 &"'.format(HIVE_HOME=HIVE_HOME)
+        _shell = _shell + '{scriptPath}"'.format(scriptPath=conf.get('hive.server2.start'))
         exeCmd.run(_shell)
 
 
