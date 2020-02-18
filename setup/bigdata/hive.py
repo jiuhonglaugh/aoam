@@ -12,7 +12,7 @@ from setup.utils import config_util
 from setup.utils import exeCmd
 
 conf = config_util.getDict('hive')
-log = logger()
+log = logger(loggername='hive')
 
 
 def getHiveServer2(hostAndPorts):
@@ -62,6 +62,3 @@ def checkServerProcess():
 
 if __name__ == '__main__':
     checkServerProcess()
-    # a = "a{} ".format
-    #
-    # print(a(1))

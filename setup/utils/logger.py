@@ -6,10 +6,12 @@ from setup.utils import config_util
 
 conf = config_util.getDict('log-conf')
 
-
+'''
+loggername 参数最好指定，如果不指定可能会导致日志重复输出
+'''
 class logger:
-    def __init__(self, clevel=logging.INFO, Flevel=logging.WARN):
-        self.logger = logging.getLogger(conf.get('logs-path'))
+    def __init__(self, clevel=logging.INFO, Flevel=logging.INFO, loggername='default'):
+        self.logger = logging.getLogger(loggername)
         self.logger.setLevel(logging.DEBUG)
         fmt = logging.Formatter(conf.get('logs-format'))
         # 设置Console日志
@@ -37,5 +39,7 @@ class logger:
 
     def cri(self, message):
         self.logger.critical(message)
+
+
 if __name__ == '__main__':
     logger.info("asd")

@@ -11,7 +11,7 @@ from setup.utils import file_util
 from setup.utils import xml_util
 from setup.utils import exeCmd
 
-log = logger()
+log = logger(loggername='hbase')
 
 
 def getHadoopXml(configPath):

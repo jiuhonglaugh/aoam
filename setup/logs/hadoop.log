@@ -296,3 +296,183 @@
 
 2020-02-18 15:25:29,234  logger.py : WARNING  开始启动  test 节点的 hmaster 服务
 
+2020-02-18 15:30:07,722  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:30:07,722  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:30:07,722  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:30:07,722  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:30:07,749  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:30:07,749  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:30:07,749  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:30:07,749  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:38:43,870  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:38:43,870  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:38:43,870  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:38:43,870  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:38:43,894  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:38:43,894  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:38:43,894  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:38:43,894  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:39:02,064  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:39:02,064  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:39:02,064  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:39:02,064  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:39:02,087  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:39:02,087  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:39:02,087  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:39:02,087  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:39:41,287  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:39:41,287  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:39:41,287  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:39:41,287  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:39:41,310  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:39:41,310  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:39:41,310  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:39:41,310  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:41:49,892  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:41:49,892  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:41:49,892  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:41:49,892  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:41:49,916  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:41:49,916  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:41:49,916  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:41:49,916  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:42:32,903  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:42:32,903  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:42:32,903  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:42:32,903  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:42:32,927  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:42:32,927  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:42:32,927  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:42:32,927  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:43:05,829  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:43:05,829  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:43:05,829  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:43:05,829  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:43:05,852  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:43:05,852  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:43:05,852  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:43:05,852  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:46:37,163  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:46:37,163  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:46:37,163  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:46:37,163  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:46:37,190  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:46:37,190  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:46:37,190  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:46:37,190  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:46:56,661  logger.py : WARNING  test1 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:46:56,661  logger.py : WARNING  test1 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:46:56,661  logger.py : WARNING  开始启动 test1 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:46:56,661  logger.py : WARNING  开始启动 test1 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:46:56,704  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:46:56,704  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:46:56,704  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:46:56,704  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:48:38,079  logger.py : WARNING  test1 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:48:38,079  logger.py : WARNING  test1 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:48:38,079  logger.py : WARNING  开始启动 test1 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:48:38,079  logger.py : WARNING  开始启动 test1 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:48:38,126  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:48:38,126  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:48:38,126  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:48:38,126  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:49:07,332  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:49:07,332  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:49:07,332  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:49:07,332  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:49:07,359  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:49:07,359  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:49:07,359  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:49:07,359  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:49:54,301  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:49:54,301  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:49:54,301  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:49:54,301  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:49:54,321  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:49:54,321  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:49:54,325  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:49:54,325  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:51:07,777  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:51:07,777  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:51:07,777  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:51:07,777  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:51:07,855  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:51:07,855  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:51:07,855  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:51:07,855  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:59:57,634  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:59:57,634  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 15:59:57,634  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:59:57,634  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 15:59:57,635  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hive --service metastore > None/metastore.log 2>&1 &" 命令
+2020-02-18 15:59:57,635  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hive --service metastore > None/metastore.log 2>&1 &" 命令
+2020-02-18 15:59:57,663  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:59:57,663  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 15:59:57,663  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:59:57,663  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 15:59:57,663  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hive --service hiveserver2 > None/hiveserver2.log 2>&1 &" 命令
+2020-02-18 15:59:57,663  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hive --service hiveserver2 > None/hiveserver2.log 2>&1 &" 命令
+2020-02-18 16:00:17,646  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 16:00:17,646  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 16:00:17,646  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hive --service metastore > None/metastore.log 2>&1 &" 命令
+2020-02-18 16:00:17,675  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 16:00:17,675  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 16:00:17,676  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hive --service hiveserver2 > None/hiveserver2.log 2>&1 &" 命令

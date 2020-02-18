@@ -13,7 +13,7 @@ from setup.utils import file_util
 from setup.utils import xml_util
 from setup.utils import exeCmd
 
-log = logger()
+log = logger(loggername='hadoop')
 hdfsXml = xml_util.getXml('../config/hdfs-site.xml', 'property')
 client = InsecureClient('http://' + hdfsXml['dfs.http.address'], user='hadoop', root='/')
 

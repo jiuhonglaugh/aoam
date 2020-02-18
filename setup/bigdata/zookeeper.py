@@ -12,7 +12,7 @@ from setup.utils import config_util
 from setup.utils import exeCmd
 
 conf = config_util.getDict('zookeeper')
-log = logger()
+log = logger(loggername='zookeeper')
 
 
 def getQuorumPeerMain(hostAndPorts):
