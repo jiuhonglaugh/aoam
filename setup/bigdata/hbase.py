@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import sys
+
 sys.path.append('/zywa/aoam')
 import os
 import re
@@ -59,18 +60,17 @@ def exeCheckServerProcess():
                 startHbase(node, server.lower())
             else:
                 log.info(node + ' 节点 ' + server + "服务正在运行\n")
-    time_util.sleep(30)
 
 
 def startHbase(ip, name):
     HBASE_HOME = os.getenv('HBASE_HOME')
     if ('hmaster'.find(name) >= 0):
         log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务\n')
-        _shell = 'ansible client -l ' + ip + ' -a "' + HBASE_HOME + '/hbase-daemons.sh start master"'
+        _shell = 'ansible client -l ' + ip + ' -a "' + HBASE_HOME + '/bin/hbase-daemons.sh start master"'
         exeCmd.run(_shell)
     else:
         log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务\n')
-        _shell = 'ansible client -l ' + ip + ' -a "' + HBASE_HOME + '/hbase-daemons.sh start regionserver"'
+        _shell = 'ansible client -l ' + ip + ' -a "' + HBASE_HOME + '/bin/hbase-daemons.sh start regionserver"'
         exeCmd.run(_shell)
 
 

@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-from setup.utils.logger import logger
-from setup.utils import config_util
-from setup.utils import exeCmd
+
 import sys
+
 sys.path.append('/zywa/aoam')
 import re
 import os
+from setup.utils.logger import logger
+from setup.utils import config_util
+from setup.utils import exeCmd
 
 conf = config_util.getDict('zookeeper')
 log = logger()
@@ -26,7 +28,6 @@ def startZk(host, server):
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
     _shell = 'ansible client -l ' + host + ' -a "' + ZOOKEEPER_HOME + '/bin/zkServer.sh start"'
     exeCmd.run(_shell)
-
 
 
 def checkServerProcess():
