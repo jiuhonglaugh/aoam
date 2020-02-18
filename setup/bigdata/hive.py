@@ -36,11 +36,12 @@ def getHiveMetaStore(keys, dict):
 def startHive(host, server):
     HIVE_HOME = os.getenv('HIVE_HOME')
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
+    _shell = 'ansible client -l {host} -a "{HIVE_HOME}/bin/hive --service '.format(host=host, HIVE_HOME=HIVE_HOME)
     if "org.apache.hadoop.hive.metastore.HiveMetaStore".find(server):
-        _shell = 'ansible client -l ' + host + ' -a "' + HIVE_HOME + '/bin/hive --service metastore > ' + HIVE_HOME + '/metastore.log 2>&1 &"'
+        _shell = _shell + 'metastore > {HIVE_HOME}/metastore.log 2>&1 &"'.format(HIVE_HOME=HIVE_HOME)
         exeCmd.run(_shell)
     else:
-        _shell = 'ansible client -l ' + host + ' -a "' + HIVE_HOME + '/bin/hive --service hiveserver2 > ' + HIVE_HOME + '/hiveserver2.log 2>&1 &"'
+        _shell = _shell + 'hiveserver2 > {HIVE_HOME}/hiveserver2.log 2>&1 &"'.format(HIVE_HOME=HIVE_HOME)
         exeCmd.run(_shell)
 
 
@@ -50,14 +51,17 @@ def checkServerProcess():
     hostAndPorts = conf.get('hive.metastore')
     serverlist = getHiveMetaStore(hostAndPorts.split(','), serverlist)
     for host in serverlist:
-        content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps -m grep RunJar"')
+        content = exeCmd.Popen('ansible client -l {host} -a "jps -m"'.format(host=host))
         for server in serverlist.get(host).split(','):
             if (len(re.findall(server, content)) < 1):
-                log.warn(host + ' 节点的 ' + server + ' 服务未运行')
+                log.warn('{host} 节点的 {server} 服务未运行'.format(host=host, server=server))
                 startHive(host, server)
             else:
-                log.info(host + ' 节点 ' + server + "服务正在运行\n")
+                log.info('{host} 节点  {server} 服务正在运行\n'.format(host=host, server=server))
 
 
 if __name__ == '__main__':
     checkServerProcess()
+    # a = "a{} ".format
+    #
+    # print(a(1))

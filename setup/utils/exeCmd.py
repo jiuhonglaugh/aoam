@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 # -*- encoding:utf-8 -*-
+import sys
+sys.path.append('/zywa/aoam')
 import subprocess as sbp
+from setup.utils.logger import logger
+
+log = logger()
 
 
 def check_call(cmd):
@@ -37,4 +42,5 @@ def Popen(cmd):
 
 
 def run(cmd):
+    log.info("开始执行 {} 命令".format(cmd))
     sbp.run(cmd, shell=True)
