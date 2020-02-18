@@ -32,7 +32,7 @@ def startZk(host, server):
 
 
 def checkServerProcess():
-    hostAndPorts = conf.get('hosts')
+    hostAndPorts = conf.get('zookeeper.hosts')
     serverlist = getQuorumPeerMain(hostAndPorts.split(','))
     for host in serverlist:
         content = exeCmd.Popen('ansible client -l {host} -a "jps"'.format(host=host))

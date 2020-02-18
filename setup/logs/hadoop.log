@@ -476,3 +476,58 @@
 2020-02-18 16:00:17,675  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
 
 2020-02-18 16:00:17,676  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hive --service hiveserver2 > None/hiveserver2.log 2>&1 &" 命令
+2020-02-18 19:13:43,181  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-18 19:13:43,185  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-18 19:13:43,185  logger.py : INFO  开始执行 ansible client -l test -a "None/start-server2.sh" 命令
+2020-02-18 19:13:43,209  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-18 19:13:43,212  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-18 19:13:43,212  logger.py : INFO  开始执行 ansible client -l test -a "None/start-metastore.sh" 命令
+2020-02-18 19:14:23,197  logger.py : WARNING  test 节点的  QuorumPeerMain  服务未运行
+2020-02-18 19:14:23,197  logger.py : WARNING  开始启动 test 节点的 QuorumPeerMain 服务
+
+2020-02-18 19:14:23,197  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/zkServer.sh start" 命令
+2020-02-18 19:14:44,325  logger.py : WARNING  test1 节点的  Kafka  服务未运行
+2020-02-18 19:14:44,325  logger.py : WARNING  开始启动 test1 节点的 Kafka 服务
+
+2020-02-18 19:14:44,325  logger.py : INFO  开始执行 ansible client -l test1 -a "None/bin/zkServer.sh start" 命令
+2020-02-18 19:14:44,395  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-18 19:14:44,395  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-18 19:14:44,395  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/zkServer.sh start" 命令
+2020-02-18 19:16:15,742  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-18 19:16:15,742  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-18 19:16:15,742  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-18 19:16:15,789  logger.py : WARNING  test1 节点的  Kafka  服务未运行
+2020-02-18 19:16:15,793  logger.py : WARNING  开始启动 test1 节点的 Kafka 服务
+
+2020-02-18 19:16:15,793  logger.py : INFO  开始执行 ansible client -l test1 -a "None/start.sh" 命令
+2020-02-18 20:34:12,997  logger.py : WARNING  test1 节点的 AzkabanWebServer 服务未运行
+2020-02-18 20:34:12,997  logger.py : WARNING  开始启动 test1 节点的 AzkabanWebServer 服务
+
+2020-02-18 20:34:34,873  logger.py : WARNING  test 节点的 AzkabanWebServer 服务未运行
+2020-02-18 20:34:34,873  logger.py : WARNING  开始启动 test 节点的 AzkabanWebServer 服务
+
+2020-02-18 20:34:34,873  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-web-server/bin/start-web.sh" 命令
+2020-02-18 20:34:34,896  logger.py : WARNING  test 节点的 AzkabanExecutorServer 服务未运行
+2020-02-18 20:34:34,896  logger.py : WARNING  开始启动 test 节点的 AzkabanExecutorServer 服务
+
+2020-02-18 20:34:34,896  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-exec-server/bin/start-exec.sh" 命令
+2020-02-18 20:34:34,924  logger.py : WARNING  test 节点的 AzkabanExecutorServer 服务未运行
+2020-02-18 20:34:34,924  logger.py : WARNING  开始启动 test 节点的 AzkabanExecutorServer 服务
+
+2020-02-18 20:34:34,924  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-exec-server/bin/start-exec.sh" 命令
+2020-02-18 20:34:34,971  logger.py : WARNING  test1 节点的 AzkabanWebServer 服务未运行
+2020-02-18 20:34:34,971  logger.py : WARNING  开始启动 test1 节点的 AzkabanWebServer 服务
+
+2020-02-18 20:34:34,971  logger.py : INFO  开始执行 ansible client -l test1 -a "None/azkaban-web-server/bin/start-web.sh" 命令
+2020-02-18 20:34:51,199  logger.py : WARNING  test 节点的 AzkabanWebServer 服务未运行
+2020-02-18 20:34:51,199  logger.py : WARNING  开始启动 test 节点的 AzkabanWebServer 服务
+
+2020-02-18 20:34:51,199  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-web-server/bin/start-web.sh" 命令
+2020-02-18 20:34:51,223  logger.py : WARNING  test 节点的 AzkabanExecutorServer 服务未运行
+2020-02-18 20:34:51,223  logger.py : WARNING  开始启动 test 节点的 AzkabanExecutorServer 服务
+
+2020-02-18 20:34:51,223  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-exec-server/bin/start-exec.sh" 命令
