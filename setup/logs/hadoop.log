@@ -504,3 +504,30 @@
 2020-02-18 19:16:15,793  logger.py : WARNING  开始启动 test1 节点的 Kafka 服务
 
 2020-02-18 19:16:15,793  logger.py : INFO  开始执行 ansible client -l test1 -a "None/start.sh" 命令
+2020-02-18 20:34:12,997  logger.py : WARNING  test1 节点的 AzkabanWebServer 服务未运行
+2020-02-18 20:34:12,997  logger.py : WARNING  开始启动 test1 节点的 AzkabanWebServer 服务
+
+2020-02-18 20:34:34,873  logger.py : WARNING  test 节点的 AzkabanWebServer 服务未运行
+2020-02-18 20:34:34,873  logger.py : WARNING  开始启动 test 节点的 AzkabanWebServer 服务
+
+2020-02-18 20:34:34,873  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-web-server/bin/start-web.sh" 命令
+2020-02-18 20:34:34,896  logger.py : WARNING  test 节点的 AzkabanExecutorServer 服务未运行
+2020-02-18 20:34:34,896  logger.py : WARNING  开始启动 test 节点的 AzkabanExecutorServer 服务
+
+2020-02-18 20:34:34,896  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-exec-server/bin/start-exec.sh" 命令
+2020-02-18 20:34:34,924  logger.py : WARNING  test 节点的 AzkabanExecutorServer 服务未运行
+2020-02-18 20:34:34,924  logger.py : WARNING  开始启动 test 节点的 AzkabanExecutorServer 服务
+
+2020-02-18 20:34:34,924  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-exec-server/bin/start-exec.sh" 命令
+2020-02-18 20:34:34,971  logger.py : WARNING  test1 节点的 AzkabanWebServer 服务未运行
+2020-02-18 20:34:34,971  logger.py : WARNING  开始启动 test1 节点的 AzkabanWebServer 服务
+
+2020-02-18 20:34:34,971  logger.py : INFO  开始执行 ansible client -l test1 -a "None/azkaban-web-server/bin/start-web.sh" 命令
+2020-02-18 20:34:51,199  logger.py : WARNING  test 节点的 AzkabanWebServer 服务未运行
+2020-02-18 20:34:51,199  logger.py : WARNING  开始启动 test 节点的 AzkabanWebServer 服务
+
+2020-02-18 20:34:51,199  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-web-server/bin/start-web.sh" 命令
+2020-02-18 20:34:51,223  logger.py : WARNING  test 节点的 AzkabanExecutorServer 服务未运行
+2020-02-18 20:34:51,223  logger.py : WARNING  开始启动 test 节点的 AzkabanExecutorServer 服务
+
+2020-02-18 20:34:51,223  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-exec-server/bin/start-exec.sh" 命令
