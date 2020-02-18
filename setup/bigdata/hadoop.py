@@ -157,12 +157,12 @@ def start_hadoop(ip, serverName):
         exeCmd.run(_shell)
     elif ('resourcemanagernodemanager'.find(serverName) >= 0):
         log.warn('开始启动 {ip} 节点的 {serverName} 服务\n'.format(ip=ip, serverName=serverName))
-        _shell = _shell + '/sbin/yarn-daemon.sh start {serverName}"'.format(serverName=serverName)
+        _shell = _shell + 'yarn-daemon.sh start {serverName}"'.format(serverName=serverName)
         exeCmd.run(_shell)
     else:
         log.warn('开始启动 {ip} 节点的 {serverName} 服务\n'.format(ip=ip, serverName=serverName))
-        _shell = _shell + '/sbin/mr-jobhistory-daemon.sh start historyserver"'
+        _shell = _shell + 'mr-jobhistory-daemon.sh start historyserver"'
         exeCmd.run(_shell)
 
-        if __name__ == '__main__':
-            exeCheckServerProcess()
+if __name__ == '__main__':
+    exeCheckServerProcess()
