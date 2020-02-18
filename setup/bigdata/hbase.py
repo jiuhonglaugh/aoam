@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-from hdfs import InsecureClient
-import configparser
+import sys
+sys.path.append('/zywa/aoam')
 import os
 import re
 from setup.utils.logger import logger
