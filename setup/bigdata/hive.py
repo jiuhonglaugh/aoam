@@ -38,10 +38,10 @@ def startHive(host, server):
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
     _shell = 'ansible client -l {host} -a "{HIVE_HOME}/'.format(host=host, HIVE_HOME=HIVE_HOME)
     if "org.apache.hadoop.hive.metastore.HiveMetaStore".find(server) >= 0:
-        _shell = _shell + '{scriptPath}"'.format(scriptPath=conf.get('hive.metastore.start'))
+        _shell = _shell + '{scriptName}"'.format(scriptName=conf.get('hive.metastore.start.script'))
         exeCmd.run(_shell)
     else:
-        _shell = _shell + '{scriptPath}"'.format(scriptPath=conf.get('hive.server2.start'))
+        _shell = _shell + '{scriptName}"'.format(scriptName=conf.get('hive.server2.start.script'))
         exeCmd.run(_shell)
 
 
