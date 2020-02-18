@@ -145,7 +145,6 @@ def exeCheckServerProcess():
 
 
 def start_hadoop(ip, name):
-    name = name.lower()
     HADOOP_HOME = os.getenv('HADOOP_HOME')
     if ('secondarynamenodenamenodedatanode'.find(name) >= 0):
         log.warn('开始启动 ' + ip + ' 节点的 ' + name + ' 服务\n')
