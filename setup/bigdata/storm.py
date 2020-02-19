@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+import sys
 
+sys.path.append('/zywa/aoam')
 from setup.utils.logger import logger
 from setup.utils import config_util
 from setup.utils import exeCmd
