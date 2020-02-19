@@ -6,11 +6,12 @@ import sys
 
 sys.path.append('/zywa/aoam')
 import re
-import os
 from setup.utils.logger import logger
 from setup.utils import config_util
 from setup.utils import exeCmd
+from setup.utils.environment_util import environment_util
 
+env = environment_util()
 conf = config_util.getDict('zookeeper')
 log = logger(loggername='zookeeper')
 
@@ -24,7 +25,7 @@ def getQuorumPeerMain(hostAndPorts):
 
 
 def startZk(host, server):
-    ZOOKEEPER_HOME = os.getenv('ZOOKEEPER_HOME')
+    ZOOKEEPER_HOME = env.ZOOKEEPER_HOME
     log.warn('开始启动 {host} 节点的 {server} 服务\n'.format(host=host, server=server))
     _shell = 'ansible client -l {host} -a "{ZOOKEEPER_HOME}'.format(host=host, ZOOKEEPER_HOME=ZOOKEEPER_HOME)
     _shell = _shell + '/bin/zkServer.sh start"'

@@ -6,11 +6,12 @@ import sys
 
 sys.path.append('/zywa/aoam')
 import re
-import os
 from setup.utils.logger import logger
 from setup.utils import config_util
 from setup.utils import exeCmd
+from setup.utils.environment_util import environment_util
 
+env = environment_util()
 conf = config_util.getDict('kafka')
 log = logger(loggername='kafka')
 
@@ -24,7 +25,7 @@ def getKafka(hostAndPorts):
 
 
 def startKafka(host, server):
-    KAFKA_HOME = os.getenv('KAFKA_HOME')
+    KAFKA_HOME = env.KAFKA_HOME
     log.warn('开始启动 {host} 节点的 {server} 服务\n'.format(host=host, server=server))
     _shell = 'ansible client -l {host} -a "{KAFKA_HOME}'.format(host=host, KAFKA_HOME=KAFKA_HOME)
     _shell = _shell + '/{scriptName}"'.format(scriptName=conf.get('kafka.start.script'))

@@ -6,11 +6,12 @@ import sys
 
 sys.path.append('/zywa/aoam')
 import re
-import os
 from setup.utils.logger import logger
 from setup.utils import config_util
 from setup.utils import exeCmd
+from setup.utils.environment_util import environment_util
 
+env = environment_util()
 conf = config_util.getDict('hive')
 log = logger(loggername='hive')
 
@@ -34,7 +35,7 @@ def getHiveMetaStore(keys, dict):
 
 
 def startHive(host, server):
-    HIVE_HOME = os.getenv('HIVE_HOME')
+    HIVE_HOME = env.HIVE_HOME
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
     _shell = 'ansible client -l {host} -a "{HIVE_HOME}/'.format(host=host, HIVE_HOME=HIVE_HOME)
     if "org.apache.hadoop.hive.metastore.HiveMetaStore".find(server) >= 0:

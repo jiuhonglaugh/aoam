@@ -4,13 +4,14 @@
 import sys
 
 sys.path.append('/zywa/aoam')
-import os
 import re
 from setup.utils.logger import logger
 from setup.utils import file_util
 from setup.utils import xml_util
 from setup.utils import exeCmd
+from setup.utils.environment_util import environment_util
 
+env = environment_util()
 log = logger(loggername='hbase')
 
 
@@ -62,7 +63,7 @@ def exeCheckServerProcess():
 
 
 def startHbase(ip, name):
-    HBASE_HOME = os.getenv('HBASE_HOME')
+    HBASE_HOME = env.HBASE_HOME
     _shell = 'ansible client -l {ip} -a "{HBASE_HOME}/bin/hbase-daemons.sh start '.format(ip=ip, HBASE_HOME=HBASE_HOME)
     if ('hmaster'.find(name) >= 0):
         log.warn('开始启动  {ip} 节点的 {name} 服务\n'.format(ip=ip, name=name))

@@ -5,14 +5,15 @@ from hdfs import InsecureClient
 import sys
 
 sys.path.append('/zywa/aoam')
-import os
 import re
 from setup.utils.logger import logger
 from setup.utils import time_util
 from setup.utils import file_util
 from setup.utils import xml_util
 from setup.utils import exeCmd
+from setup.utils.environment_util import environment_util
 
+env = environment_util()
 log = logger(loggername='hadoop')
 hdfsXml = xml_util.getXml('../config/hdfs-site.xml', 'property')
 client = InsecureClient('http://' + hdfsXml['dfs.http.address'], user='hadoop', root='/')
@@ -147,7 +148,7 @@ def exeCheckServerProcess():
 
 
 def start_hadoop(ip, serverName):
-    HADOOP_HOME = os.getenv('HADOOP_HOME')
+    HADOOP_HOME = env.HADOOP_HOME
 
     _shell = 'ansible client -l {ip} -a "{HADOOP_HOME}/sbin/'.format(ip=ip, HADOOP_HOME=HADOOP_HOME)
 
@@ -163,6 +164,7 @@ def start_hadoop(ip, serverName):
         log.warn('开始启动 {ip} 节点的 {serverName} 服务\n'.format(ip=ip, serverName=serverName))
         _shell = _shell + 'mr-jobhistory-daemon.sh start historyserver"'
         exeCmd.run(_shell)
+
 
 if __name__ == '__main__':
     exeCheckServerProcess()
