@@ -39,10 +39,10 @@ def startAzkaban(host, server):
     log.warn('开始启动 {host} 节点的 {server} 服务\n'.format(host=host, server=server))
     _shell = 'ansible client -l {host} -a "{AZKABAN_HOME}'.format(host=host, AZKABAN_HOME=AZKABAN_HOME)
     if "AzkabanWebServer".find(server) >= 0:
-        _shell = _shell + '/azkaban-web-server/bin/start-web.sh"'
+        _shell = _shell + '/azkaban-web-server/start-web.sh"'
         exeCmd.run(_shell)
     else:
-        _shell = _shell + '/azkaban-exec-server/bin/start-exec.sh"'
+        _shell = _shell + '/azkaban-exec-server/start-exec.sh"'
         exeCmd.run(_shell)
 
 
