@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 import os
+
 '''
-如果
+如果服务器中配置了环境变量
+下面对应的不需要配置
 '''
+
 
 class environment_util:
     ELASTICSEARCH_HOME = None
