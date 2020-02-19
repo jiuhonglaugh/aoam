@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 import os
-
+'''
+如果
+'''
 
 class environment_util:
     ELASTICSEARCH_HOME = None
