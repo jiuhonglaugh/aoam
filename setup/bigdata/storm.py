@@ -8,7 +8,6 @@ from setup.utils import config_util
 from setup.utils import exeCmd
 import re
 import os
-from elasticsearch import Elasticsearch
 
 conf = config_util.getDict('storm')
 log = logger(loggername='storm')

@@ -7,10 +7,9 @@ from setup.utils import config_util
 from setup.utils import exeCmd
 import re
 import os
-from elasticsearch import Elasticsearch
 
-conf = config_util.getDict('logstash')
-log = logger(loggername='logstash')
+conf = config_util.getDict('flume')
+log = logger(loggername='flume')
 
 '''
 检测索引是否存在，如果集群挂了，是无法返回索引的存在与否
@@ -50,34 +49,34 @@ def checkExistPort(hostsOrhosts_Port):
  某个host主机上有Logstash
  返回一个字典：{'XXXX':'Logstash','XXXXX':'Logstash'}
 '''
-def getLogstash(hostAndPorts):
+def getFlume(hostAndPorts):
     dict = {}
     isExist = checkExistPort(hostAndPorts)
     for hostAndPort in hostAndPorts:
         if isExist == True:
             host = hostAndPort.split(':')[0]   #有IP的，有端口
-            dict[host] = 'Logstash'
+            dict[host] = 'Application'
         else:
-            dict[hostAndPort] = 'Logstash'  #如果只有IP的，无端口
+            dict[hostAndPort] = 'Application'  #如果只有IP的，无端口
     return dict
 
-def startLogstash(host, server):
-    LOGSTASH_HOME = os.getenv('LOGSTASH_HOME')
+def startFlume(host, server):
+    FLUME_HOME = os.getenv('FLUME_HOME')
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
-    _shell = 'ansible client -l ' + host + ' -a "' + LOGSTASH_HOME + '/start.sh"'
+    _shell = 'ansible client -l ' + host + ' -a "' + FLUME_HOME + '/nginx-flume.sh start "'
     exeCmd.run(_shell)
 
 
 def checkServerProcess():
-    HostAndPorts = conf.get('logstash.hosts')
-    logstashServerList = getLogstash(HostAndPorts.split(','))
-    for host in logstashServerList:
+    HostAndPorts = conf.get('flume.hosts')
+    flumeServerList = getFlume(HostAndPorts.split(','))
+    for host in flumeServerList:
         content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
-        if (len(re.findall(logstashServerList.get(host), content)) < 1):
-            log.warn(host + ' 节点的 ' + 'logstash' + ' 服务未运行')
-            startLogstash(host, 'logstash')
+        if (len(re.findall(flumeServerList.get(host), content)) < 1):
+            log.warn(host + ' 节点的 ' + 'flume' + ' 服务未运行')
+            startFlume(host, 'flume')
         else:
-            log.info(host + ' 节点的 ' + 'Storm---supervisor' + '服务正在运行')
+            log.info(host + ' 节点的 ' + 'flume' + '服务正在运行')
 
 if __name__ == '__main__':
     checkServerProcess()
