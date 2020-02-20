@@ -7,16 +7,29 @@ from setup.utils import config_util
 from setup.utils import exeCmd
 import re
 import os
-from elasticsearch import Elasticsearch
+#from elasticsearch import Elasticsearch
 
 conf = config_util.getDict('elasticsearch')
 log = logger(loggername='elasticsearch')
 
 '''
+判断传入的ip等参数是否存在端口
+1）存在端口
+2）不存在端口
+'''
+def checkExistPort(hostsOrhosts_Port):
+    hosts = hostsOrhosts_Port[0]
+    if hosts.find(':') != -1:
+        return True
+    else:
+        return False
+
+
+'''
 检测索引是否存在，如果集群挂了，是无法返回索引的存在与否
 '''
 
-
+'''
 def checkServer():
     hostAndPorts = conf.get('hosts')
     es = Elasticsearch(hostAndPorts)
@@ -32,25 +45,31 @@ def checkServer():
         logger.warn("集群挂了")
     logger.info("elasticsearch集群节点数：" + lists['number_of_nodes'])
     logger.info("elasticsearch集群节点数：" + lists['number_of_data_nodes'])
-
+'''
 
 def getES(hostAndPorts):
     dict = {}
+    isExist = checkExistPort(hostAndPorts)
     for hostAndPort in hostAndPorts:
-        host = hostAndPort.split(':')[0]
-        dict[host] = 'es'
+        if isExist == True:
+            host = hostAndPort.split(':')[0]   #有IP的，有端口
+            dict[host] = 'Elasticsearch'
+        else:
+            dict[hostAndPort] = 'Elasticsearch'  #如果只有IP的，无端口
     return dict
 
 
 def startES(host, server):
-    ES_HOME = os.getenv('ELASTICSEARCH_HOME')
+    print(server)
+    ELASTICSEARCH_HOME = os.getenv('ELASTICSEARCH_HOME')
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
-    _shell = 'ansible client -l ' + host + ' -a "' + ES_HOME + '/start.sh"'
+    _shell = 'ansible client -l ' + host + ' -a "' + ELASTICSEARCH_HOME + '/start.sh"'
     exeCmd.run(_shell)
 
 
 def checkServerProcess():
-    hostAndPorts = conf.get('hosts')
+    hostAndPorts = conf.get('es.hosts')
+    print(hostAndPorts)
     serverlist = getES(hostAndPorts.split(','))
     for host in serverlist:
         content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
@@ -63,4 +82,4 @@ def checkServerProcess():
 
 if __name__ == '__main__':
     checkServerProcess()
-    checkServer()
+    #checkServer()

@@ -531,3 +531,27 @@
 2020-02-18 20:34:51,223  logger.py : WARNING  开始启动 test 节点的 AzkabanExecutorServer 服务
 
 2020-02-18 20:34:51,223  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-exec-server/bin/start-exec.sh" 命令
+2020-02-20 09:52:26,455  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 09:52:26,455  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+
+2020-02-20 09:53:40,160  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 09:53:40,160  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+
+2020-02-20 09:54:27,802  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 09:54:27,802  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+
+2020-02-20 09:55:17,410  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 09:55:17,410  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+
+2020-02-20 10:04:11,379  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 10:04:11,379  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+
+2020-02-20 10:05:22,225  logger.py : WARNING  172.10.10.137 节点的 flume 服务未运行
+2020-02-20 10:05:22,225  logger.py : WARNING  开始启动 172.10.10.137 节点的 flume 服务
+
+2020-02-20 10:07:32,037  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 10:07:32,037  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+
+2020-02-20 10:09:13,320  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 10:09:13,320  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+
