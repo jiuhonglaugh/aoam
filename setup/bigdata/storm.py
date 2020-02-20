@@ -66,7 +66,7 @@ def startStorm(host, server):
 def checkServerProcess():
     masterHostAndPorts = conf.get('storm.hosts.nimbus')
     supervisorHostAndPorts = conf.get('storm.hosts.supervisor')
-    masterServerList = getStorm(nimbusHostAndPorts.split(','))
+    masterServerList = getNimbus(nimbusHostAndPorts.split(','))
     nimbusServerList = masterServerList[0]
     coreServerList = masterServerList[1]
     supervisorServerList = getSupervisor(supervisorHostAndPorts.split(','))

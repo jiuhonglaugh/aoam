@@ -724,3 +724,12 @@
 2020-02-20 09:06:42,096  logger.py : INFO  开始删除hdfs上的/aoam/aoam.txt文件
 2020-02-20 09:06:42,107  logger.py : INFO  开始向hdfs测试写入/aoam/aoam.txt文件
 2020-02-20 09:06:42,107  logger.py : INFO  向hdfs写入/aoam/aoam.txt文件成功
+2020-02-20 10:37:27,877  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 10:37:27,877  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+
+2020-02-20 10:41:55,849  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 10:41:55,850  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+
+2020-02-20 10:42:27,210  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
+2020-02-20 10:42:27,210  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+

@@ -58,14 +58,19 @@ def getES(hostAndPorts):
             dict[hostAndPort] = 'Elasticsearch'  #如果只有IP的，无端口
     return dict
 
-
+'''
 def startES(host, server):
-    print(server)
     ELASTICSEARCH_HOME = os.getenv('ELASTICSEARCH_HOME')
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
     _shell = 'ansible client -l ' + host + ' -a "' + ELASTICSEARCH_HOME + '/start.sh"'
     exeCmd.run(_shell)
-
+'''
+def startES(host, server):
+    ELASTICSEARCH_HOME = os.getenv('ELASTICSEARCH_HOME')
+    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
+    _shell = 'ansible client -l ' + host + ' -a "' + ELASTICSEARCH_HOME + '/start.sh "'
+    type(_shell)
+    exeCmd.run(_shell)
 
 def checkServerProcess():
     hostAndPorts = conf.get('es.hosts')
