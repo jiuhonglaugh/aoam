@@ -639,3 +639,9 @@
 2020-02-19 19:19:13,799  logger.py : WARNING  开始启动 test 节点的 QuorumPeerMain 服务
 
 2020-02-19 19:19:13,799  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/zkServer.sh start" 命令
+2020-02-19 19:41:25,489  logger.py : WARNING  172.10.10.137 节点的 logstash 服务未运行
+2020-02-19 19:41:25,489  logger.py : WARNING  开始启动 172.10.10.137 节点的 logstash 服务
+
+2020-02-19 19:42:06,569  logger.py : WARNING  172.10.10.138 节点的 logstash 服务未运行
+2020-02-19 19:42:06,569  logger.py : WARNING  开始启动 172.10.10.138 节点的 logstash 服务
+

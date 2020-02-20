@@ -7,7 +7,7 @@ from setup.utils import config_util
 from setup.utils import exeCmd
 import re
 import os
-from elasticsearch import Elasticsearch
+# from elasticsearch import Elasticsearch
 
 conf = config_util.getDict('elasticsearch')
 log = logger(loggername='elasticsearch')
@@ -17,21 +17,21 @@ log = logger(loggername='elasticsearch')
 '''
 
 
-def checkServer():
-    hostAndPorts = conf.get('hosts')
-    es = Elasticsearch(hostAndPorts)
-    # print(es.indices.exists(index="test"))  #填写对应索引
-    lists = es.cluster.health()
-    logger.info("elasticsearch集群状态：")
-    ES_cluster_status = lists["status"]
-    if ES_cluster_status == "green":
-        logger.info("####集群处于健康状态####")
-    elif ES_cluster_status == "yellow":
-        logger.info("集群处于亚健康状态")
-    elif ES_cluster_status == "red":
-        logger.warn("集群挂了")
-    logger.info("elasticsearch集群节点数：" + lists['number_of_nodes'])
-    logger.info("elasticsearch集群节点数：" + lists['number_of_data_nodes'])
+# def checkServer():
+#     hostAndPorts = conf.get('hosts')
+#     es = Elasticsearch(hostAndPorts)
+#     # print(es.indices.exists(index="test"))  #填写对应索引
+#     lists = es.cluster.health()
+#     logger.info("elasticsearch集群状态：")
+#     ES_cluster_status = lists["status"]
+#     if ES_cluster_status == "green":
+#         logger.info("####集群处于健康状态####")
+#     elif ES_cluster_status == "yellow":
+#         logger.info("集群处于亚健康状态")
+#     elif ES_cluster_status == "red":
+#         logger.warn("集群挂了")
+#     logger.info("elasticsearch集群节点数：" + lists['number_of_nodes'])
+#     logger.info("elasticsearch集群节点数：" + lists['number_of_data_nodes'])
 
 
 def getES(hostAndPorts):
@@ -63,4 +63,4 @@ def checkServerProcess():
 
 if __name__ == '__main__':
     checkServerProcess()
-    checkServer()
+    # checkServer()
