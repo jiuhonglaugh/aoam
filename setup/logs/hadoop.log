@@ -866,3 +866,11 @@
 2020-02-20 14:10:43,462  logger.py : WARNING  开始启动 172.10.10.138 节点的 logstash 服务
 
 2020-02-20 14:10:43,462  logger.py : INFO  开始执行 ansible client -l 172.10.10.138 -a "None/start-logstash.sh" 命令
+2020-02-20 17:09:49,371  logger.py : WARNING  172.10.10.131 节点的 flume 服务未运行
+2020-02-20 17:09:49,371  logger.py : WARNING  开始启动 172.10.10.131 节点的 flume 服务
+
+2020-02-20 17:09:49,371  logger.py : INFO  开始执行 ansible client -l 172.10.10.131 -a "None/nginx-flume.sh start " 命令
+2020-02-20 17:09:49,390  logger.py : WARNING  172.10.10.132 节点的 flume 服务未运行
+2020-02-20 17:09:49,391  logger.py : WARNING  开始启动 172.10.10.132 节点的 flume 服务
+
+2020-02-20 17:09:49,391  logger.py : INFO  开始执行 ansible client -l 172.10.10.132 -a "None/nginx-flume.sh start " 命令

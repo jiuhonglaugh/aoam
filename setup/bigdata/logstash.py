@@ -77,7 +77,7 @@ def checkServerProcess():
             log.warn(host + ' 节点的 ' + 'logstash' + ' 服务未运行')
             startLogstash(host, 'logstash')
         else:
-            log.info(host + ' 节点的 ' + 'Storm---supervisor' + '服务正在运行')
+            log.info(host + ' 节点的 ' + 'Logstash' + '服务正在运行')
 
 if __name__ == '__main__':
     checkServerProcess()
