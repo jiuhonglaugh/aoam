@@ -733,3 +733,15 @@
 2020-02-20 10:42:27,210  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
 2020-02-20 10:42:27,210  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
 
+2020-02-20 11:10:15,492  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:10:15,492  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:18:53,552  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:18:53,552  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:21:37,205  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:21:37,205  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:24:26,420  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:24:26,420  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
