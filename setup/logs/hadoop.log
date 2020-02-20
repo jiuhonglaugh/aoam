@@ -695,3 +695,32 @@
 
 2020-02-20 08:07:05,752  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/mr-jobhistory-daemon.sh start historyserver" 命令
 2020-02-20 08:07:05,779  logger.py : INFO  检测到有 6 个hadoop进程重启
+2020-02-20 09:06:11,902  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-20 09:06:11,902  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+
+2020-02-20 09:06:11,902  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start datanode" 命令
+2020-02-20 09:06:11,925  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-20 09:06:11,925  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+
+2020-02-20 09:06:11,925  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start nodemanager" 命令
+2020-02-20 09:06:11,949  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-20 09:06:11,949  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+
+2020-02-20 09:06:11,949  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start namenode" 命令
+2020-02-20 09:06:11,972  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-20 09:06:11,972  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+
+2020-02-20 09:06:11,972  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start secondarynamenode" 命令
+2020-02-20 09:06:11,996  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-20 09:06:11,996  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+
+2020-02-20 09:06:11,996  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start resourcemanager" 命令
+2020-02-20 09:06:12,019  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-20 09:06:12,019  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+
+2020-02-20 09:06:12,019  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/mr-jobhistory-daemon.sh start historyserver" 命令
+2020-02-20 09:06:12,046  logger.py : INFO  检测到有 6 个hadoop进程重启
+2020-02-20 09:06:42,049  logger.py : INFO  开始测试hadoop服务是否可用
+2020-02-20 09:06:42,096  logger.py : INFO  开始删除hdfs上的/aoam/aoam.txt文件
+2020-02-20 09:06:42,107  logger.py : INFO  开始向hdfs测试写入/aoam/aoam.txt文件
+2020-02-20 09:06:42,107  logger.py : INFO  向hdfs写入/aoam/aoam.txt文件成功
