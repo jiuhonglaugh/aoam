@@ -5,14 +5,15 @@ from hdfs import InsecureClient
 import sys
 
 sys.path.append('/zywa/aoam')
-import os
 import re
 from setup.utils.logger import logger
 from setup.utils import time_util
 from setup.utils import file_util
 from setup.utils import xml_util
 from setup.utils import exeCmd
+from setup.utils.environment_util import environment_util
 
+env = environment_util()
 log = logger(loggername='hadoop')
 hdfsXml = xml_util.getXml('../config/hdfs-site.xml', 'property')
 client = InsecureClient('http://' + hdfsXml['dfs.http.address'], user='hadoop', root='/')
@@ -133,21 +134,25 @@ def checkServerProcess():
 
 def exeCheckServerProcess():
     serverList = checkServerProcess()
+    startNum = 0
     for node in serverList:
         content = exeCmd.Popen('ansible client -l {node} -a "jps"'.format(node=node))
         for server in serverList.get(node).split(','):
             if (len(re.findall(server, content)) < 1):
                 log.warn('{node} 节点的 {server} 服务未运行'.format(node=node, server=server))
                 start_hadoop(node, server.lower())
+                startNum += 1
             else:
                 log.info('{node} 节点 {server} 服务正在运行\n'.format(node=node, server=server))
-    time_util.sleep(30)
+    if startNum > 0:
+        log.info("检测到有 {startNum} 个hadoop进程重启".format(startNum=startNum))
+        time_util.sleep(30)
     log.info('开始测试hadoop服务是否可用')
     checkService()
 
 
 def start_hadoop(ip, serverName):
-    HADOOP_HOME = os.getenv('HADOOP_HOME')
+    HADOOP_HOME = env.HADOOP_HOME
 
     _shell = 'ansible client -l {ip} -a "{HADOOP_HOME}/sbin/'.format(ip=ip, HADOOP_HOME=HADOOP_HOME)
 
@@ -163,6 +168,7 @@ def start_hadoop(ip, serverName):
         log.warn('开始启动 {ip} 节点的 {serverName} 服务\n'.format(ip=ip, serverName=serverName))
         _shell = _shell + 'mr-jobhistory-daemon.sh start historyserver"'
         exeCmd.run(_shell)
+
 
 if __name__ == '__main__':
     exeCheckServerProcess()

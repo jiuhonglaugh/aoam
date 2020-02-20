@@ -6,11 +6,12 @@ import sys
 
 sys.path.append('/zywa/aoam')
 import re
-import os
 from setup.utils.logger import logger
 from setup.utils import config_util
 from setup.utils import exeCmd
+from setup.utils.environment_util import environment_util
 
+env = environment_util()
 conf = config_util.getDict('azkaban')
 log = logger(loggername='azkaban')
 
@@ -34,7 +35,7 @@ def getExe(keys, dict):
 
 
 def startAzkaban(host, server):
-    AZKABAN_HOME = os.getenv('AZKABAN_HOME')
+    AZKABAN_HOME = env.AZKABAN_HOME
     # AZKABAN_EXE_HOME = os.getenv('AZKABAN_HOME')
     log.warn('开始启动 {host} 节点的 {server} 服务\n'.format(host=host, server=server))
     _shell = 'ssh {host} -a {AZKABAN_HOME}'.format(host=host, AZKABAN_HOME=AZKABAN_HOME)

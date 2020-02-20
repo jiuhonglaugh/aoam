@@ -531,27 +531,196 @@
 2020-02-18 20:34:51,223  logger.py : WARNING  开始启动 test 节点的 AzkabanExecutorServer 服务
 
 2020-02-18 20:34:51,223  logger.py : INFO  开始执行 ansible client -l test -a "None/azkaban-exec-server/bin/start-exec.sh" 命令
-2020-02-20 09:52:26,455  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
-2020-02-20 09:52:26,455  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+2020-02-19 19:08:13,692  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-19 19:08:27,363  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-19 19:10:05,017  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-19 19:10:05,017  logger.py : WARNING  开始启动 test 节点的 datanode 服务
 
-2020-02-20 09:53:40,160  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
-2020-02-20 09:53:40,160  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+2020-02-19 19:10:05,017  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start datanode" 命令
+2020-02-19 19:10:05,033  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-19 19:10:05,033  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
 
-2020-02-20 09:54:27,802  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
-2020-02-20 09:54:27,802  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+2020-02-19 19:10:05,033  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start nodemanager" 命令
+2020-02-19 19:10:05,080  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-19 19:10:05,080  logger.py : WARNING  开始启动 test 节点的 namenode 服务
 
-2020-02-20 09:55:17,410  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
-2020-02-20 09:55:17,410  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+2020-02-19 19:10:05,080  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start namenode" 命令
+2020-02-19 19:10:05,095  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-19 19:10:05,095  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
 
-2020-02-20 10:04:11,379  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
-2020-02-20 10:04:11,379  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+2020-02-19 19:10:05,095  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start secondarynamenode" 命令
+2020-02-19 19:10:05,127  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-19 19:10:05,127  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
 
-2020-02-20 10:05:22,225  logger.py : WARNING  172.10.10.137 节点的 flume 服务未运行
-2020-02-20 10:05:22,225  logger.py : WARNING  开始启动 172.10.10.137 节点的 flume 服务
+2020-02-19 19:10:05,127  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start resourcemanager" 命令
+2020-02-19 19:10:05,142  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-19 19:10:05,142  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
 
-2020-02-20 10:07:32,037  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
-2020-02-20 10:07:32,037  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+2020-02-19 19:10:05,142  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/mr-jobhistory-daemon.sh start historyserver" 命令
+2020-02-19 19:10:35,188  logger.py : INFO  开始测试hadoop服务是否可用
+2020-02-19 19:10:41,551  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-19 19:10:41,551  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
 
-2020-02-20 10:09:13,320  logger.py : WARNING  172.10.10.137 节点的 Elasticsearch 服务未运行
-2020-02-20 10:09:13,320  logger.py : WARNING  开始启动 172.10.10.137 节点的 Elasticsearch 服务
+2020-02-19 19:10:41,551  logger.py : INFO  开始执行 ansible client -l test -a "None/start-server2.sh" 命令
+2020-02-19 19:10:41,569  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-19 19:10:41,569  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
 
+2020-02-19 19:10:41,569  logger.py : INFO  开始执行 ansible client -l test -a "None/start-metastore.sh" 命令
+2020-02-19 19:11:47,603  logger.py : WARNING  test 节点的 AzkabanWebServer 服务未运行
+2020-02-19 19:11:47,603  logger.py : WARNING  开始启动 test 节点的 AzkabanWebServer 服务
+
+2020-02-19 19:11:47,603  logger.py : INFO  开始执行 ssh test -a //azkaban-web-server/start-web.sh 命令
+2020-02-19 19:13:28,136  logger.py : WARNING  test 节点的 AzkabanWebServer 服务未运行
+2020-02-19 19:13:28,136  logger.py : WARNING  开始启动 test 节点的 AzkabanWebServer 服务
+
+2020-02-19 19:13:28,136  logger.py : INFO  开始执行 ssh test -a None/azkaban-web-server/start-web.sh 命令
+2020-02-19 19:15:59,254  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-19 19:15:59,254  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+
+2020-02-19 19:15:59,254  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start datanode" 命令
+2020-02-19 19:15:59,277  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-19 19:15:59,277  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+
+2020-02-19 19:15:59,277  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start nodemanager" 命令
+2020-02-19 19:15:59,301  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-19 19:15:59,301  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+
+2020-02-19 19:15:59,301  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start namenode" 命令
+2020-02-19 19:15:59,320  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-19 19:15:59,320  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+
+2020-02-19 19:15:59,320  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start secondarynamenode" 命令
+2020-02-19 19:15:59,344  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-19 19:15:59,344  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+
+2020-02-19 19:15:59,344  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start resourcemanager" 命令
+2020-02-19 19:15:59,367  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-19 19:15:59,367  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+
+2020-02-19 19:15:59,367  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/mr-jobhistory-daemon.sh start historyserver" 命令
+2020-02-19 19:16:29,391  logger.py : INFO  开始测试hadoop服务是否可用
+2020-02-19 19:16:36,254  logger.py : WARNING  test 节点的  HRegionServer 服务未运行
+2020-02-19 19:16:36,258  logger.py : WARNING  开始启动 test 节点的 hregionserver 服务
+
+2020-02-19 19:16:36,258  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hbase-daemons.sh start regionserver" 命令
+2020-02-19 19:16:36,281  logger.py : WARNING  test 节点的  HMaster 服务未运行
+2020-02-19 19:16:36,281  logger.py : WARNING  开始启动  test 节点的 hmaster 服务
+
+2020-02-19 19:16:36,281  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hbase-daemons.sh start master" 命令
+2020-02-19 19:17:08,917  logger.py : WARNING  test 节点的  HRegionServer 服务未运行
+2020-02-19 19:17:08,917  logger.py : WARNING  开始启动 test 节点的 hregionserver 服务
+
+2020-02-19 19:17:08,917  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hbase-daemons.sh start regionserver" 命令
+2020-02-19 19:17:08,932  logger.py : WARNING  test 节点的  HMaster 服务未运行
+2020-02-19 19:17:08,932  logger.py : WARNING  开始启动  test 节点的 hmaster 服务
+
+2020-02-19 19:17:08,932  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hbase-daemons.sh start master" 命令
+2020-02-19 19:17:35,524  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-19 19:17:35,524  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-19 19:17:35,524  logger.py : INFO  开始执行 ansible client -l test -a "None/start-server2.sh" 命令
+2020-02-19 19:17:35,544  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-19 19:17:35,548  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-19 19:17:35,548  logger.py : INFO  开始执行 ansible client -l test -a "None/start-metastore.sh" 命令
+2020-02-19 19:18:09,764  logger.py : WARNING  test 节点的 org.apache.hive.service.server.HiveServer2 服务未运行
+2020-02-19 19:18:09,764  logger.py : WARNING  开始启动 test 节点的 org.apache.hive.service.server.HiveServer2 服务
+
+2020-02-19 19:18:09,764  logger.py : INFO  开始执行 ansible client -l test -a "None/start-server2.sh" 命令
+2020-02-19 19:18:09,787  logger.py : WARNING  test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务未运行
+2020-02-19 19:18:09,787  logger.py : WARNING  开始启动 test 节点的 org.apache.hadoop.hive.metastore.HiveMetaStore 服务
+
+2020-02-19 19:18:09,787  logger.py : INFO  开始执行 ansible client -l test -a "None/start-metastore.sh" 命令
+2020-02-19 19:18:46,114  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-19 19:18:46,114  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-19 19:18:46,114  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-19 19:19:13,799  logger.py : WARNING  test 节点的  QuorumPeerMain  服务未运行
+2020-02-19 19:19:13,799  logger.py : WARNING  开始启动 test 节点的 QuorumPeerMain 服务
+
+2020-02-19 19:19:13,799  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/zkServer.sh start" 命令
+2020-02-19 19:41:25,489  logger.py : WARNING  172.10.10.137 节点的 logstash 服务未运行
+2020-02-19 19:41:25,489  logger.py : WARNING  开始启动 172.10.10.137 节点的 logstash 服务
+
+2020-02-19 19:42:06,569  logger.py : WARNING  172.10.10.138 节点的 logstash 服务未运行
+2020-02-19 19:42:06,569  logger.py : WARNING  开始启动 172.10.10.138 节点的 logstash 服务
+
+2020-02-20 08:06:45,946  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-20 08:06:45,946  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+
+2020-02-20 08:06:45,946  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start datanode" 命令
+2020-02-20 08:06:45,986  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-20 08:06:45,986  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+
+2020-02-20 08:06:45,986  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start nodemanager" 命令
+2020-02-20 08:06:46,013  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-20 08:06:46,013  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+
+2020-02-20 08:06:46,013  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start namenode" 命令
+2020-02-20 08:06:46,037  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-20 08:06:46,037  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+
+2020-02-20 08:06:46,037  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start secondarynamenode" 命令
+2020-02-20 08:06:46,060  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-20 08:06:46,060  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+
+2020-02-20 08:06:46,060  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start resourcemanager" 命令
+2020-02-20 08:06:46,095  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-20 08:06:46,095  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+
+2020-02-20 08:06:46,095  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/mr-jobhistory-daemon.sh start historyserver" 命令
+2020-02-20 08:06:46,119  logger.py : INFO  检测到有部分 6 hadoop进程重启
+2020-02-20 08:07:05,635  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-20 08:07:05,635  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+
+2020-02-20 08:07:05,635  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start datanode" 命令
+2020-02-20 08:07:05,658  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-20 08:07:05,658  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+
+2020-02-20 08:07:05,658  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start nodemanager" 命令
+2020-02-20 08:07:05,682  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-20 08:07:05,682  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+
+2020-02-20 08:07:05,682  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start namenode" 命令
+2020-02-20 08:07:05,705  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-20 08:07:05,705  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+
+2020-02-20 08:07:05,705  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start secondarynamenode" 命令
+2020-02-20 08:07:05,729  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-20 08:07:05,729  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+
+2020-02-20 08:07:05,729  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start resourcemanager" 命令
+2020-02-20 08:07:05,752  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-20 08:07:05,752  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+
+2020-02-20 08:07:05,752  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/mr-jobhistory-daemon.sh start historyserver" 命令
+2020-02-20 08:07:05,779  logger.py : INFO  检测到有 6 个hadoop进程重启
+2020-02-20 09:06:11,902  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-20 09:06:11,902  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+
+2020-02-20 09:06:11,902  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start datanode" 命令
+2020-02-20 09:06:11,925  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-20 09:06:11,925  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+
+2020-02-20 09:06:11,925  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start nodemanager" 命令
+2020-02-20 09:06:11,949  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-20 09:06:11,949  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+
+2020-02-20 09:06:11,949  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start namenode" 命令
+2020-02-20 09:06:11,972  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-20 09:06:11,972  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+
+2020-02-20 09:06:11,972  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start secondarynamenode" 命令
+2020-02-20 09:06:11,996  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-20 09:06:11,996  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+
+2020-02-20 09:06:11,996  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start resourcemanager" 命令
+2020-02-20 09:06:12,019  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-20 09:06:12,019  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+
+2020-02-20 09:06:12,019  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/mr-jobhistory-daemon.sh start historyserver" 命令
+2020-02-20 09:06:12,046  logger.py : INFO  检测到有 6 个hadoop进程重启
+2020-02-20 09:06:42,049  logger.py : INFO  开始测试hadoop服务是否可用
+2020-02-20 09:06:42,096  logger.py : INFO  开始删除hdfs上的/aoam/aoam.txt文件
+2020-02-20 09:06:42,107  logger.py : INFO  开始向hdfs测试写入/aoam/aoam.txt文件
+2020-02-20 09:06:42,107  logger.py : INFO  向hdfs写入/aoam/aoam.txt文件成功
