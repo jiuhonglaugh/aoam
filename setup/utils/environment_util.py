@@ -65,7 +65,6 @@ class environment_util:
                 self.ZOOKEEPER_HOME = os.getenv('ZOOKEEPER_HOME')
 
 
-
 if __name__ == '__main__':
     env = environment_util()
     print(env.HADOOP_HOME)
