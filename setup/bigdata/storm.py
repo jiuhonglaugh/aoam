@@ -100,7 +100,7 @@ def checkServerProcess():
             log.warn(host + ' 节点的 ' + 'Storm---UI' + ' 服务未运行')
             startUi(host, 'Storm')
         else:
-            log.info(host + ' 节点的 ' + ' Storm---nimbus ' + '服务正在运行')
+            log.info(host + ' 节点的 ' + ' Storm---UI ' + '服务正在运行')
     for host in nimbusServerList:
         content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
         if (len(re.findall(nimbusServerList.get(host), content)) < 1):

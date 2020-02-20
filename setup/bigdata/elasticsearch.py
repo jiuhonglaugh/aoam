@@ -67,9 +67,9 @@ def startES(host, server):
 '''
 def startES(host, server):
     ELASTICSEARCH_HOME = os.getenv('ELASTICSEARCH_HOME')
+    _shell = 'ansible client -l ' + host + ' -a "'
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
-    _shell = 'ansible client -l ' + host + ' -a "' + ELASTICSEARCH_HOME + '/start.sh "'
-    type(_shell)
+    _shell = _shell +  '{ELASTICSEARCH_HOME}/start.sh'.format(ELASTICSEARCH_HOME=ELASTICSEARCH_HOME)
     exeCmd.run(_shell)
 
 def checkServerProcess():
