@@ -855,3 +855,14 @@
 2020-02-20 12:00:08,227  logger.py : WARNING  开始启动 172.10.10.139 节点的 Elasticsearch 服务
 
 2020-02-20 12:00:08,227  logger.py : INFO  开始执行 ansible client -l 172.10.10.139 -a "None/start.sh 命令
+2020-02-20 14:06:41,846  logger.py : WARNING  172.10.10.137 节点的 logstash 服务未运行
+2020-02-20 14:06:41,846  logger.py : WARNING  开始启动 172.10.10.137 节点的 logstash 服务
+
+2020-02-20 14:10:43,441  logger.py : WARNING  172.10.10.137 节点的 logstash 服务未运行
+2020-02-20 14:10:43,442  logger.py : WARNING  开始启动 172.10.10.137 节点的 logstash 服务
+
+2020-02-20 14:10:43,442  logger.py : INFO  开始执行 ansible client -l 172.10.10.137 -a "None/start-logstash.sh" 命令
+2020-02-20 14:10:43,462  logger.py : WARNING  172.10.10.138 节点的 logstash 服务未运行
+2020-02-20 14:10:43,462  logger.py : WARNING  开始启动 172.10.10.138 节点的 logstash 服务
+
+2020-02-20 14:10:43,462  logger.py : INFO  开始执行 ansible client -l 172.10.10.138 -a "None/start-logstash.sh" 命令
