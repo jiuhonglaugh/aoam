@@ -32,9 +32,11 @@ def checkServer():
     logger.info("elasticsearch集群节点数："+lists['number_of_nodes'])
     logger.info("elasticsearch集群节点数："+lists['number_of_data_nodes'])
 '''
-#某个host主机上有nimbus和core
+
+
+# 某个host主机上有nimbus和core
 def getNimbus(hostAndPorts):
-    _list = [1,2]
+    _list = [1, 2]
     dict_nimbus = {}
     dict_core = {}
     for hostAndPort in hostAndPorts:
@@ -46,10 +48,13 @@ def getNimbus(hostAndPorts):
     print(_list)
     return _list
 
+
 '''
  某个host主机上有supervisor
  返回一个字典：{'XXXX':'supervisor','XXXXX':'supervisor'}
 '''
+
+
 def getSupervisor(hostAndPorts):
     dict = {}
     for hostAndPort in hostAndPorts:
@@ -57,22 +62,28 @@ def getSupervisor(hostAndPorts):
         dict[host] = 'Supervisor'
     return dict
 
+
 def startNimbus(host, server):
     STORM_HOME = os.getenv('STORM_HOME')
+    _shell = 'ansible client -l ' + host + ' -a "'
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
-    _shell = 'ansible client -l ' + host + ' -a "' + STORM_HOME + '/start-Nimbus.sh"'
+    _shell = _shell + '{STORM_HOME}/start-Nimbus.sh"'.format(STORM_HOME=STORM_HOME)
     exeCmd.run(_shell)
+
 
 def startSupervisor(host, server):
     STORM_HOME = os.getenv('STORM_HOME')
+    _shell = 'ansible client -l ' + host + ' -a "'
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
-    _shell = 'ansible client -l ' + host + ' -a "' + STORM_HOME + '/start-Supervisor.sh"'
+    _shell = _shell + '{STORM_HOME}/start-Supervisor.sh"'.format(STORM_HOME=STORM_HOME)
     exeCmd.run(_shell)
+
 
 def startUi(host, server):
     STORM_HOME = os.getenv('STORM_HOME')
+    _shell = 'ansible client -l ' + host + ' -a "'
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
-    _shell = 'ansible client -l ' + host + ' -a "' + STORM_HOME + '/start-Ui.sh"'
+    _shell = _shell + '{STORM_HOME}/start-Ui.sh"'.format(STORM_HOME=STORM_HOME)
     exeCmd.run(_shell)
 
 
@@ -105,6 +116,7 @@ def checkServerProcess():
         else:
             log.info(host + ' 节点的 ' + 'Storm---supervisor' + '服务正在运行')
 
+
 if __name__ == '__main__':
     checkServerProcess()
-    #checkServer()
+    # checkServer()

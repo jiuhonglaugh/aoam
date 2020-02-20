@@ -745,3 +745,77 @@
 2020-02-20 11:24:26,420  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
 2020-02-20 11:24:26,420  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
 
+2020-02-20 11:34:30,492  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:34:30,492  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:36:00,792  logger.py : WARNING  172.10.10.138 节点的 Storm---UI 服务未运行
+2020-02-20 11:36:00,792  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:37:13,325  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:37:13,325  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:38:12,701  logger.py : WARNING  172.10.10.138 节点的 Storm---UI 服务未运行
+2020-02-20 11:38:12,701  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:38:12,701  logger.py : INFO  开始执行 None/start-Ui.sh" 命令
+2020-02-20 11:38:12,760  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:38:12,764  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:38:12,764  logger.py : INFO  开始执行 None/start-Ui.sh" 命令
+2020-02-20 11:38:12,811  logger.py : WARNING  172.10.10.138 节点的 Storm---nimbus 服务未运行
+2020-02-20 11:38:12,811  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:38:52,980  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:38:52,980  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:38:52,980  logger.py : INFO  开始执行 ansible client -l 172.10.10.137 -a "None/start-Ui.sh" 命令
+2020-02-20 11:38:53,027  logger.py : WARNING  172.10.10.138 节点的 Storm---UI 服务未运行
+2020-02-20 11:38:53,027  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:38:53,027  logger.py : INFO  开始执行 ansible client -l 172.10.10.138 -a "None/start-Ui.sh" 命令
+2020-02-20 11:38:53,073  logger.py : WARNING  172.10.10.137 节点的 Storm---nimbus 服务未运行
+2020-02-20 11:38:53,073  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:39:48,961  logger.py : WARNING  172.10.10.138 节点的 Storm---UI 服务未运行
+2020-02-20 11:39:48,961  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:39:48,961  logger.py : INFO  开始执行 ansible client -l 172.10.10.138 -a "None/start-Ui.sh" 命令
+2020-02-20 11:39:49,019  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:39:49,019  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:39:49,019  logger.py : INFO  开始执行 ansible client -l 172.10.10.137 -a "None/start-Ui.sh" 命令
+2020-02-20 11:39:49,074  logger.py : WARNING  172.10.10.138 节点的 Storm---nimbus 服务未运行
+2020-02-20 11:39:49,074  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:39:49,074  logger.py : INFO  开始执行 ansible client -l 172.10.10.138 -a "None/start-Nimbus.sh" 命令
+2020-02-20 11:39:49,141  logger.py : WARNING  172.10.10.137 节点的 Storm---nimbus 服务未运行
+2020-02-20 11:39:49,144  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:39:49,144  logger.py : INFO  开始执行 ansible client -l 172.10.10.137 -a "None/start-Nimbus.sh" 命令
+2020-02-20 11:39:49,203  logger.py : WARNING  172.10.10.138 节点的 Storm---supervisor 服务未运行
+2020-02-20 11:39:49,203  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:40:38,907  logger.py : WARNING  172.10.10.137 节点的 Storm---UI 服务未运行
+2020-02-20 11:40:38,907  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:40:38,907  logger.py : INFO  开始执行 ansible client -l 172.10.10.137 -a "None/start-Ui.sh" 命令
+2020-02-20 11:40:38,950  logger.py : WARNING  172.10.10.138 节点的 Storm---UI 服务未运行
+2020-02-20 11:40:38,950  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:40:38,950  logger.py : INFO  开始执行 ansible client -l 172.10.10.138 -a "None/start-Ui.sh" 命令
+2020-02-20 11:40:38,997  logger.py : WARNING  172.10.10.137 节点的 Storm---nimbus 服务未运行
+2020-02-20 11:40:38,997  logger.py : WARNING  开始启动 172.10.10.137 节点的 Storm 服务
+
+2020-02-20 11:40:38,997  logger.py : INFO  开始执行 ansible client -l 172.10.10.137 -a "None/start-Nimbus.sh" 命令
+2020-02-20 11:40:39,040  logger.py : WARNING  172.10.10.138 节点的 Storm---nimbus 服务未运行
+2020-02-20 11:40:39,040  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:40:39,040  logger.py : INFO  开始执行 ansible client -l 172.10.10.138 -a "None/start-Nimbus.sh" 命令
+2020-02-20 11:40:39,087  logger.py : WARNING  172.10.10.139 节点的 Storm---supervisor 服务未运行
+2020-02-20 11:40:39,087  logger.py : WARNING  开始启动 172.10.10.139 节点的 Storm 服务
+
+2020-02-20 11:40:39,087  logger.py : INFO  开始执行 ansible client -l 172.10.10.139 -a "None/start-Supervisor.sh" 命令
+2020-02-20 11:40:39,134  logger.py : WARNING  172.10.10.138 节点的 Storm---supervisor 服务未运行
+2020-02-20 11:40:39,134  logger.py : WARNING  开始启动 172.10.10.138 节点的 Storm 服务
+
+2020-02-20 11:40:39,134  logger.py : INFO  开始执行 ansible client -l 172.10.10.138 -a "None/start-Supervisor.sh" 命令
