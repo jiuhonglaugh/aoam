@@ -77,7 +77,7 @@ def checkServerProcess():
     print(hostAndPorts)
     serverlist = getES(hostAndPorts.split(','))
     for host in serverlist:
-        content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
+        content = exeCmd.execJps(host)
         if (len(re.findall(serverlist.get(host), content)) < 1):
             log.warn(host + ' 节点的 ' + 'Elasticsearch' + ' 服务未运行')
             startES(host, 'Elasticsearch')

@@ -135,15 +135,15 @@ def checkServerProcess():
 def exeCheckServerProcess():
     serverList = checkServerProcess()
     startNum = 0
-    for node in serverList:
-        content = exeCmd.Popen('ansible client -l {node} -a "jps"'.format(node=node))
-        for server in serverList.get(node).split(','):
+    for host in serverList:
+        content = exeCmd.execJps(host)
+        for server in serverList.get(host).split(','):
             if (len(re.findall(server, content)) < 1):
-                log.warn('{node} 节点的 {server} 服务未运行'.format(node=node, server=server))
-                start_hadoop(node, server.lower())
+                log.warn('{host} 节点的 {server} 服务未运行'.format(host=host, server=server))
+                start_hadoop(host, server.lower())
                 startNum += 1
             else:
-                log.info('{node} 节点 {server} 服务正在运行\n'.format(node=node, server=server))
+                log.info('{host} 节点 {server} 服务正在运行\n'.format(host=host, server=server))
     if startNum > 0:
         log.info("检测到有 {startNum} 个hadoop进程重启".format(startNum=startNum))
         time_util.sleep(30)

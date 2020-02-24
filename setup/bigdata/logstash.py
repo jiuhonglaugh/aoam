@@ -72,7 +72,7 @@ def checkServerProcess():
     HostAndPorts = conf.get('logstash.hosts')
     logstashServerList = getLogstash(HostAndPorts.split(','))
     for host in logstashServerList:
-        content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
+        content = exeCmd.execJps(host)
         if (len(re.findall(logstashServerList.get(host), content)) < 1):
             log.warn(host + ' 节点的 ' + 'logstash' + ' 服务未运行')
             startLogstash(host, 'logstash')

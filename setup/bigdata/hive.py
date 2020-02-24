@@ -52,7 +52,7 @@ def checkServerProcess():
     hostAndPorts = conf.get('hive.metastore')
     serverlist = getHiveMetaStore(hostAndPorts.split(','), serverlist)
     for host in serverlist:
-        content = exeCmd.Popen('ansible client -l {host} -a "jps -m"'.format(host=host))
+        content = exeCmd.execJps(host)
         for server in serverlist.get(host).split(','):
             if (len(re.findall(server, content)) < 1):
                 log.warn('{host} 节点的 {server} 服务未运行'.format(host=host, server=server))

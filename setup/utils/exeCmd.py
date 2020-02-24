@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- encoding:utf-8 -*-
 import sys
+
 sys.path.append('/zywa/aoam')
 import subprocess as sbp
 from setup.utils.logger import logger
@@ -34,6 +35,10 @@ def getoutput(cmd):
 
 def getstatusgetoutput(cmd):
     return sbp.getstatusoutput(cmd)
+
+
+def execJps(host):
+    return Popen('ansible client -l {host} -a "jps"'.format(host=host))
 
 
 def Popen(cmd):

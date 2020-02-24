@@ -36,7 +36,6 @@ def getExe(keys, dict):
 
 def startAzkaban(host, server):
     AZKABAN_HOME = env.AZKABAN_HOME
-    # AZKABAN_EXE_HOME = os.getenv('AZKABAN_HOME')
     log.warn('开始启动 {host} 节点的 {server} 服务\n'.format(host=host, server=server))
     _shell = 'ssh {host} -a {AZKABAN_HOME}'.format(host=host, AZKABAN_HOME=AZKABAN_HOME)
     if "AzkabanWebServer".find(server) >= 0:
@@ -53,7 +52,7 @@ def checkServerProcess():
     hostAndPorts = conf.get('azkaban.exe.hosts')
     serverlist = getExe(hostAndPorts.split(','), serverlist)
     for host in serverlist:
-        content = exeCmd.Popen('ansible client -l {host} -a "jps"'.format(host=host))
+        content = exeCmd.execJps(host)
         for server in serverlist.get(host).split(','):
             if (len(re.findall(server, content)) < 1):
                 log.warn('{host} 节点的 {server} 服务未运行'.format(host=host, server=server))

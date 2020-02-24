@@ -73,7 +73,7 @@ def checkServerProcess():
     print(HostAndPorts)
     flumeServerList = getFlume(HostAndPorts.split(','))
     for host in flumeServerList:
-        content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
+        content = exeCmd.execJps(host)
         if (len(re.findall(flumeServerList.get(host), content)) < 1):
             log.warn(host + ' 节点的 ' + 'flume' + ' 服务未运行')
             startFlume(host, 'flume')

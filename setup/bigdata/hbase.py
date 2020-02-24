@@ -52,25 +52,25 @@ def checkServerProcess():
 
 def exeCheckServerProcess():
     serverList = checkServerProcess()
-    for node in serverList:
-        content = exeCmd.Popen('ansible client -l {node} -a "jps"'.format(node=node))
-        for server in serverList.get(node).split(','):
+    for host in serverList:
+        content = exeCmd.execJps(host)
+        for server in serverList.get(host).split(','):
             if (len(re.findall(server, content)) < 1):
-                log.warn('{node} 节点的  {server} 服务未运行'.format(node=node, server=server))
-                startHbase(node, server.lower())
+                log.warn('{host} 节点的  {server} 服务未运行'.format(host=host, server=server))
+                startHbase(host, server.lower())
             else:
-                log.info('{node} 节点 {server} 服务正在运行\n'.format(node=node, server=server))
+                log.info('{host} 节点 {server} 服务正在运行\n'.format(host=host, server=server))
 
 
-def startHbase(ip, name):
+def startHbase(host, name):
     HBASE_HOME = env.HBASE_HOME
-    _shell = 'ansible client -l {ip} -a "{HBASE_HOME}/bin/hbase-daemons.sh start '.format(ip=ip, HBASE_HOME=HBASE_HOME)
+    _shell = 'ansible client -l {host} -a "{HBASE_HOME}/bin/hbase-daemons.sh start '.format(host=host, HBASE_HOME=HBASE_HOME)
     if ('hmaster'.find(name) >= 0):
-        log.warn('开始启动  {ip} 节点的 {name} 服务\n'.format(ip=ip, name=name))
+        log.warn('开始启动  {host} 节点的 {name} 服务\n'.format(host=host, name=name))
         _shell = _shell + 'master"'
         exeCmd.run(_shell)
     else:
-        log.warn('开始启动 {ip} 节点的 {name} 服务\n'.format(ip=ip, name=name))
+        log.warn('开始启动 {host} 节点的 {name} 服务\n'.format(host=host, name=name))
         _shell = _shell + 'regionserver"'
         exeCmd.run(_shell)
 

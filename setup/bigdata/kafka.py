@@ -36,7 +36,7 @@ def checkServerProcess():
     hostAndPorts = conf.get('kafka.hosts')
     serverlist = getKafka(hostAndPorts.split(','))
     for host in serverlist:
-        content = exeCmd.Popen('ansible client -l {host} -a "jps"'.format(host=host))
+        content = exeCmd.execJps(host)
         if (len(re.findall(serverlist.get(host), content)) < 1):
             log.warn('{host} 节点的  Kafka  服务未运行'.format(host=host))
             startKafka(host, 'Kafka')
