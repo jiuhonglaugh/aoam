@@ -47,18 +47,18 @@ def startAzkaban(host, server):
 
 
 def checkServerProcess():
-    hostAndPorts = conf.get('azkaban.web.hosts')
-    serverlist = getWeb(hostAndPorts.split(','))
-    hostAndPorts = conf.get('azkaban.exe.hosts')
-    serverlist = getExe(hostAndPorts.split(','), serverlist)
-    for host in serverlist:
+    webHostAndPorts = conf.get('azkaban.web.hosts')
+    serverProcessList = getWeb(webHostAndPorts.split(','))
+    execHostAndPorts = conf.get('azkaban.exe.hosts')
+    serverProcessList = getExe(execHostAndPorts.split(','), serverProcessList)
+    for host in serverProcessList:
         content = exeCmd.execJps(host)
-        for server in serverlist.get(host).split(','):
-            if (len(re.findall(server, content)) < 1):
-                log.warn('{host} 节点的 {server} 服务未运行'.format(host=host, server=server))
-                startAzkaban(host, server)
+        for serverName in serverProcessList.get(host).split(','):
+            if (len(re.findall(serverName, content)) < 1):
+                log.warn('{host} 节点的 {serverName} 服务未运行'.format(host=host, serverName=serverName))
+                startAzkaban(host, serverName)
             else:
-                log.info('{host} 节点  {server} 服务正在运行\n'.format(host=host, server=server))
+                log.info('{host} 节点  {serverName} 服务正在运行\n'.format(host=host, serverName=serverName))
 
 
 if __name__ == '__main__':

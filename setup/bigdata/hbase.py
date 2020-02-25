@@ -15,7 +15,7 @@ env = environment_util()
 log = logger(loggername='hbase')
 
 
-def getHadoopXml(configPath):
+def getHbaseXml(configPath):
     hbaseXml = {}
     tmp = xml_util.getXml(configPath + 'hbase-site.xml', 'property')
     hbaseXml['hbase.master'] = tmp.get('hbase.master')
@@ -44,33 +44,33 @@ def getHMaster(keys, dict):
 
 
 def checkServerProcess():
-    list = getHadoopXml(file_util.repairPath('../config/'))
+    dictXml = getHbaseXml(file_util.repairPath('../config/'))
     serverProcess = getHRegionServer('../config/')
-    serverProcess = getHMaster(list, serverProcess)
-    return serverProcess
+    return getHMaster(dictXml, serverProcess)
 
 
 def exeCheckServerProcess():
     serverList = checkServerProcess()
     for host in serverList:
         content = exeCmd.execJps(host)
-        for server in serverList.get(host).split(','):
-            if (len(re.findall(server, content)) < 1):
-                log.warn('{host} 节点的  {server} 服务未运行'.format(host=host, server=server))
-                startHbase(host, server.lower())
+        for serverName in serverList.get(host).split(','):
+            if (len(re.findall(serverName, content)) < 1):
+                log.warn('{host} 节点的  {serverName} 服务未运行'.format(host=host, serverName=serverName))
+                startHbase(host, serverName.lower())
             else:
-                log.info('{host} 节点 {server} 服务正在运行\n'.format(host=host, server=server))
+                log.info('{host} 节点 {serverName} 服务正在运行\n'.format(host=host, serverName=serverName))
 
 
-def startHbase(host, name):
+def startHbase(host, serverName):
     HBASE_HOME = env.HBASE_HOME
-    _shell = 'ansible client -l {host} -a "{HBASE_HOME}/bin/hbase-daemons.sh start '.format(host=host, HBASE_HOME=HBASE_HOME)
-    if ('hmaster'.find(name) >= 0):
-        log.warn('开始启动  {host} 节点的 {name} 服务\n'.format(host=host, name=name))
+    _shell = 'ansible client -l {host} -a "{HBASE_HOME}/bin/hbase-daemons.sh start '.format(host=host,
+                                                                                            HBASE_HOME=HBASE_HOME)
+    if ('hmaster'.find(serverName) >= 0):
+        log.warn('开始启动  {host} 节点的 {serverName} 服务\n'.format(host=host, serverName=serverName))
         _shell = _shell + 'master"'
         exeCmd.run(_shell)
     else:
-        log.warn('开始启动 {host} 节点的 {name} 服务\n'.format(host=host, name=name))
+        log.warn('开始启动 {host} 节点的 {serverName} 服务\n'.format(host=host, serverName=serverName))
         _shell = _shell + 'regionserver"'
         exeCmd.run(_shell)
 

@@ -110,3 +110,34 @@
 2020-02-24 10:19:41,498  logger.py : WARNING  开始启动 172.10.10.138 节点的 logstash 服务
 
 2020-02-24 10:19:41,498  logger.py : INFO  开始执行 ansible client -l 172.10.10.138 -a "None/start-logstash.sh" 命令
+2020-02-24 11:07:55,598  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-24 11:07:55,599  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+2020-02-24 11:07:55,599  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start datanode" 命令
+2020-02-24 11:07:55,626  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-24 11:07:55,626  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+2020-02-24 11:07:55,626  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start nodemanager" 命令
+2020-02-24 11:07:55,652  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-24 11:07:55,653  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+2020-02-24 11:07:55,653  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start namenode" 命令
+2020-02-24 11:07:55,679  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-24 11:07:55,679  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+2020-02-24 11:07:55,679  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start secondarynamenode" 命令
+2020-02-24 11:07:55,704  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-24 11:07:55,704  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+2020-02-24 11:07:55,704  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start resourcemanager" 命令
+2020-02-24 11:07:55,734  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-24 11:07:55,734  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+2020-02-24 11:07:55,734  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/mr-jobhistory-daemon.sh start historyserver" 命令
+2020-02-24 11:07:55,760  logger.py : INFO  检测到有 6 个hadoop进程重启
+2020-02-24 11:12:37,768  logger.py : WARNING  test 节点的 AzkabanWebServer 服务未运行
+2020-02-24 11:12:37,768  logger.py : WARNING  开始启动 test 节点的 AzkabanWebServer 服务
+
+2020-02-24 11:12:37,768  logger.py : INFO  开始执行 ssh test -a None/azkaban-web-server/start-web.sh 命令
+2020-02-24 11:16:04,009  logger.py : WARNING  test 节点的  HRegionServer 服务未运行
+2020-02-24 11:16:04,009  logger.py : WARNING  开始启动 test 节点的 hregionserver 服务
+
+2020-02-24 11:16:04,009  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hbase-daemons.sh start regionserver" 命令
+2020-02-24 11:16:04,034  logger.py : WARNING  test 节点的  HMaster 服务未运行
+2020-02-24 11:16:04,034  logger.py : WARNING  开始启动  test 节点的 hmaster 服务
+
+2020-02-24 11:16:04,034  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hbase-daemons.sh start master" 命令

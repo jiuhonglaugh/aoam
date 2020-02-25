@@ -123,13 +123,12 @@ def getHistoryServer(keys, dict):
 
 
 def checkServerProcess():
-    list = getHadoopXml(file_util.repairPath('../config/'))
+    dictXml = getHadoopXml(file_util.repairPath('../config/'))
     serverProcess = getDataNodeAndNodeManager('../config/')
-    serverProcess = getNameNode(list, serverProcess)
-    serverProcess = getSecondNameNode(list, serverProcess)
-    serverProcess = getResourceManager(list, serverProcess)
-    serverProcess = getHistoryServer(list, serverProcess)
-    return serverProcess
+    serverProcess = getNameNode(dictXml, serverProcess)
+    serverProcess = getSecondNameNode(dictXml, serverProcess)
+    serverProcess = getResourceManager(dictXml, serverProcess)
+    return getHistoryServer(dictXml, serverProcess)
 
 
 def exeCheckServerProcess():
@@ -145,27 +144,25 @@ def exeCheckServerProcess():
             else:
                 log.info('{host} 节点 {server} 服务正在运行\n'.format(host=host, server=server))
     if startNum > 0:
-        log.info("检测到有 {startNum} 个hadoop进程重启".format(startNum=startNum))
+        log.warn("检测到有 {startNum} 个hadoop进程重启".format(startNum=startNum))
         time_util.sleep(30)
     log.info('开始测试hadoop服务是否可用')
     checkService()
 
 
-def start_hadoop(ip, serverName):
+def start_hadoop(host, serverName):
     HADOOP_HOME = env.HADOOP_HOME
-
-    _shell = 'ansible client -l {ip} -a "{HADOOP_HOME}/sbin/'.format(ip=ip, HADOOP_HOME=HADOOP_HOME)
-
+    _shell = 'ansible client -l {host} -a "{HADOOP_HOME}/sbin/'.format(host=host, HADOOP_HOME=HADOOP_HOME)
     if ('secondarynamenodenamenodedatanode'.find(serverName) >= 0):
-        log.warn('开始启动 {ip} 节点的 {serverName} 服务\n'.format(ip=ip, serverName=serverName))
+        log.warn('开始启动 {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'hadoop-daemon.sh start {serverName}"'.format(serverName=serverName)
         exeCmd.run(_shell)
     elif ('resourcemanagernodemanager'.find(serverName) >= 0):
-        log.warn('开始启动 {ip} 节点的 {serverName} 服务\n'.format(ip=ip, serverName=serverName))
+        log.warn('开始启动 {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'yarn-daemon.sh start {serverName}"'.format(serverName=serverName)
         exeCmd.run(_shell)
     else:
-        log.warn('开始启动 {ip} 节点的 {serverName} 服务\n'.format(ip=ip, serverName=serverName))
+        log.warn('开始启动 {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'mr-jobhistory-daemon.sh start historyserver"'
         exeCmd.run(_shell)
 
