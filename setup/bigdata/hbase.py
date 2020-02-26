@@ -58,7 +58,7 @@ def exeCheckServerProcess():
                 log.warn('{host} 节点的  {serverName} 服务未运行'.format(host=host, serverName=serverName))
                 startHbase(host, serverName.lower())
             else:
-                log.info('{host} 节点 {serverName} 服务正在运行\n'.format(host=host, serverName=serverName))
+                log.info('{host} 节点 {serverName} 服务正在运行'.format(host=host, serverName=serverName))
 
 
 def startHbase(host, serverName):
@@ -66,11 +66,11 @@ def startHbase(host, serverName):
     _shell = 'ansible client -l {host} -a "{HBASE_HOME}/bin/hbase-daemons.sh start '.format(host=host,
                                                                                             HBASE_HOME=HBASE_HOME)
     if 'hmaster'.find(serverName) >= 0:
-        log.warn('开始启动  {host} 节点的 {serverName} 服务\n'.format(host=host, serverName=serverName))
+        log.warn('开始启动  {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'master"'
         exeCmd.run(_shell)
     else:
-        log.warn('开始启动 {host} 节点的 {serverName} 服务\n'.format(host=host, serverName=serverName))
+        log.warn('开始启动 {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'regionserver"'
         exeCmd.run(_shell)
 

@@ -66,7 +66,7 @@ def getSupervisor(hostAndPorts):
 def startNimbus(host, server):
     STORM_HOME = os.getenv('STORM_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
+    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
     _shell = _shell + '{STORM_HOME}/start-Nimbus.sh"'.format(STORM_HOME=STORM_HOME)
     exeCmd.run(_shell)
 
@@ -74,7 +74,7 @@ def startNimbus(host, server):
 def startSupervisor(host, server):
     STORM_HOME = os.getenv('STORM_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
+    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
     _shell = _shell + '{STORM_HOME}/start-Supervisor.sh"'.format(STORM_HOME=STORM_HOME)
     exeCmd.run(_shell)
 
@@ -82,7 +82,7 @@ def startSupervisor(host, server):
 def startUi(host, server):
     STORM_HOME = os.getenv('STORM_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
+    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
     _shell = _shell + '{STORM_HOME}/start-Ui.sh"'.format(STORM_HOME=STORM_HOME)
     exeCmd.run(_shell)
 

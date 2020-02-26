@@ -65,7 +65,7 @@ def getFlume(hostAndPorts):
 def startFlume(host, server):
     FLUME_HOME = env.FLUME_HOME
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
+    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
     _shell = _shell + '{FLUME_HOME}/nginx-flume.sh start "'.format(FLUME_HOME=FLUME_HOME)
     exeCmd.run(_shell)
 

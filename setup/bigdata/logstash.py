@@ -63,7 +63,7 @@ def getLogstash(hostAndPorts):
 def startLogstash(host, server):
     LOGSTASH_HOME = os.getenv('LOGSTASH_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
+    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
     _shell = _shell + '{LOGSTASH_HOME}/start-logstash.sh"'.format(LOGSTASH_HOME=LOGSTASH_HOME)
     exeCmd.run(_shell)
 

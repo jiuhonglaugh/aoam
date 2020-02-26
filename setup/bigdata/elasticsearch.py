@@ -61,14 +61,14 @@ def getES(hostAndPorts):
 '''
 def startES(host, server):
     ELASTICSEARCH_HOME = os.getenv('ELASTICSEARCH_HOME')
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
+    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
     _shell = 'ansible client -l ' + host + ' -a "' + ELASTICSEARCH_HOME + '/start.sh"'
     exeCmd.run(_shell)
 '''
 def startES(host, server):
     ELASTICSEARCH_HOME = os.getenv('ELASTICSEARCH_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
+    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
     _shell = _shell +  '{ELASTICSEARCH_HOME}/start.sh"'.format(ELASTICSEARCH_HOME=ELASTICSEARCH_HOME)
     exeCmd.run(_shell)
 
@@ -78,7 +78,7 @@ def checkServerProcess():
     serverlist = getES(hostAndPorts.split(','))
     for host in serverlist:
         content = exeCmd.execJps(host)
-        if len(re.findall(serverlist.get(host), content)) < 1:
+        if (len(re.findall(serverlist.get(host), content)) < 1):
             log.warn(host + ' 节点的 ' + 'Elasticsearch' + ' 服务未运行')
             startES(host, 'Elasticsearch')
         else:

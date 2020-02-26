@@ -50,7 +50,7 @@ def _delete(filePath):
 
 def checkService():
     nowTime = time_util.getTime()
-    data = nowTime + ':  此文件是自动化运维软件测试使用，用来判断hadoop集群是否正常工作的一项指标，请勿删除\n'
+    data = nowTime + ':  此文件是自动化运维软件测试使用，用来判断hadoop集群是否正常工作的一项指标，请勿删除'
     hdfspath = '/aoam/'
     fileName = 'aoam.txt'
     _createFile(hdfspath, fileName, data)
@@ -142,7 +142,7 @@ def exeCheckServerProcess():
                 start_hadoop(host, server.lower())
                 startNum += 1
             else:
-                log.info('{host} 节点 {server} 服务正在运行\n'.format(host=host, server=server))
+                log.info('{host} 节点 {server} 服务正在运行'.format(host=host, server=server))
     if startNum > 0:
         log.warn("检测到有 {startNum} 个hadoop进程重启".format(startNum=startNum))
         time_util.sleep(30)

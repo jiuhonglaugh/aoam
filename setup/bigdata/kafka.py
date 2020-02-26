@@ -26,7 +26,7 @@ def getKafka(hostAndPorts):
 
 def startKafka(host, server):
     KAFKA_HOME = env.KAFKA_HOME
-    log.warn('开始启动 {host} 节点的 {server} 服务\n'.format(host=host, server=server))
+    log.warn('开始启动 {host} 节点的 {server} 服务'.format(host=host, server=server))
     _shell = 'ansible client -l {host} -a "{KAFKA_HOME}'.format(host=host, KAFKA_HOME=KAFKA_HOME)
     _shell = _shell + '/{scriptName}"'.format(scriptName=conf.get('kafka.start.script'))
     exeCmd.run(_shell)

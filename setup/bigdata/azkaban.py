@@ -36,7 +36,7 @@ def getExe(keys, dicts):
 
 def startAzkaban(host, server):
     AZKABAN_HOME = env.AZKABAN_HOME
-    log.warn('开始启动 {host} 节点的 {server} 服务\n'.format(host=host, server=server))
+    log.warn('开始启动 {host} 节点的 {server} 服务'.format(host=host, server=server))
     _shell = 'ssh {host} -a {AZKABAN_HOME}'.format(host=host, AZKABAN_HOME=AZKABAN_HOME)
     if "AzkabanWebServer".find(server) >= 0:
         _shell = _shell + '/azkaban-web-server/start-web.sh'
@@ -58,7 +58,7 @@ def checkServerProcess():
                 log.warn('{host} 节点的 {serverName} 服务未运行'.format(host=host, serverName=serverName))
                 startAzkaban(host, serverName)
             else:
-                log.info('{host} 节点  {serverName} 服务正在运行\n'.format(host=host, serverName=serverName))
+                log.info('{host} 节点  {serverName} 服务正在运行'.format(host=host, serverName=serverName))
 
 
 if __name__ == '__main__':
