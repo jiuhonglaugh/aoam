@@ -79,47 +79,47 @@ def getHadoopXml(configPath):
 
 
 def getDataNodeAndNodeManager(path):
-    dict = {}
+    dicts = {}
     with open(file_util.repairPath(path) + 'slaves') as r:
         for line in r.readlines():
-            dict[line.strip()] = 'DataNode,NodeManager'
-    return dict
+            dicts[line.strip()] = 'DataNode,NodeManager'
+    return dicts
 
 
-def getNameNode(keys, dict):
+def getNameNode(keys, dicts):
     key = keys.get('dfs.http.address').split(':')[0]
-    if key in dict:
-        dict[key] = dict[key] + ',NameNode'
+    if key in dicts:
+        dicts[key] = dicts[key] + ',NameNode'
     else:
-        dict[key] = 'NameNode'
-    return dict
+        dicts[key] = 'NameNode'
+    return dicts
 
 
-def getSecondNameNode(keys, dict):
+def getSecondNameNode(keys, dicts):
     key = keys.get('dfs.namenode.secondary.http-address').split(':')[0]
-    if key in dict:
-        dict[key] = dict[key] + ',SecondaryNameNode'
+    if key in dicts:
+        dicts[key] = dicts[key] + ',SecondaryNameNode'
     else:
-        dict[key] = 'SecondaryNameNode'
-    return dict
+        dicts[key] = 'SecondaryNameNode'
+    return dicts
 
 
-def getResourceManager(keys, dict):
+def getResourceManager(keys, dicts):
     key = keys.get('yarn.resourcemanager.hostname')
-    if key in dict:
-        dict[key] = dict[key] + ',ResourceManager'
+    if key in dicts:
+        dicts[key] = dicts[key] + ',ResourceManager'
     else:
-        dict[key] = 'ResourceManager'
-    return dict
+        dicts[key] = 'ResourceManager'
+    return dicts
 
 
-def getHistoryServer(keys, dict):
+def getHistoryServer(keys, dicts):
     key = keys.get('yarn.log.server.url').split(":")[1].replace('//', '')
-    if key in dict:
-        dict[key] = dict[key] + ',JobHistoryServer'
+    if key in dicts:
+        dicts[key] = dicts[key] + ',JobHistoryServer'
     else:
-        dict[key] = 'JobHistoryServer'
-    return dict
+        dicts[key] = 'JobHistoryServer'
+    return dicts
 
 
 def checkServerProcess():
@@ -137,7 +137,7 @@ def exeCheckServerProcess():
     for host in serverList:
         content = exeCmd.execJps(host)
         for server in serverList.get(host).split(','):
-            if (len(re.findall(server, content)) < 1):
+            if len(re.findall(server, content)) < 1:
                 log.warn('{host} 节点的 {server} 服务未运行'.format(host=host, server=server))
                 start_hadoop(host, server.lower())
                 startNum += 1
@@ -153,11 +153,11 @@ def exeCheckServerProcess():
 def start_hadoop(host, serverName):
     HADOOP_HOME = env.HADOOP_HOME
     _shell = 'ansible client -l {host} -a "{HADOOP_HOME}/sbin/'.format(host=host, HADOOP_HOME=HADOOP_HOME)
-    if ('secondarynamenodenamenodedatanode'.find(serverName) >= 0):
+    if 'secondarynamenodenamenodedatanode'.find(serverName) >= 0:
         log.warn('开始启动 {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'hadoop-daemon.sh start {serverName}"'.format(serverName=serverName)
         exeCmd.run(_shell)
-    elif ('resourcemanagernodemanager'.find(serverName) >= 0):
+    elif 'resourcemanagernodemanager'.find(serverName) >= 0:
         log.warn('开始启动 {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'yarn-daemon.sh start {serverName}"'.format(serverName=serverName)
         exeCmd.run(_shell)

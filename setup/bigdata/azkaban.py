@@ -17,21 +17,21 @@ log = logger(loggername='azkaban')
 
 
 def getWeb(hostAndPorts):
-    dict = {}
+    dicts = {}
     for hostAndPort in hostAndPorts:
         host = hostAndPort.split(':')[0]
-        dict[host] = 'AzkabanWebServer'
-    return dict
+        dicts[host] = 'AzkabanWebServer'
+    return dicts
 
 
-def getExe(keys, dict):
+def getExe(keys, dicts):
     for key in keys:
         key = key.split(':')[0]
-        if key in dict:
-            dict[key] = dict[key] + ',AzkabanExecutorServer'
+        if key in dicts:
+            dicts[key] = dicts[key] + ',AzkabanExecutorServer'
         else:
-            dict[key] = 'AzkabanExecutorServer'
-    return dict
+            dicts[key] = 'AzkabanExecutorServer'
+    return dicts
 
 
 def startAzkaban(host, server):
@@ -54,7 +54,7 @@ def checkServerProcess():
     for host in serverProcessList:
         content = exeCmd.execJps(host)
         for serverName in serverProcessList.get(host).split(','):
-            if (len(re.findall(serverName, content)) < 1):
+            if len(re.findall(serverName, content)) < 1:
                 log.warn('{host} 节点的 {serverName} 服务未运行'.format(host=host, serverName=serverName))
                 startAzkaban(host, serverName)
             else:

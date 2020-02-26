@@ -7,7 +7,9 @@ from setup.utils import config_util
 from setup.utils import exeCmd
 import re
 import os
+from setup.utils.environment_util import environment_util
 
+env = environment_util()
 conf = config_util.getDict('flume')
 log = logger(loggername='flume')
 
@@ -61,7 +63,7 @@ def getFlume(hostAndPorts):
     return dict
 
 def startFlume(host, server):
-    FLUME_HOME = os.getenv('FLUME_HOME')
+    FLUME_HOME = env.FLUME
     _shell = 'ansible client -l ' + host + ' -a "'
     log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务\n')
     _shell = _shell + '{FLUME_HOME}/nginx-flume.sh start "'.format(FLUME_HOME=FLUME_HOME)
@@ -70,11 +72,10 @@ def startFlume(host, server):
 
 def checkServerProcess():
     HostAndPorts = conf.get('flume.hosts')
-    print(HostAndPorts)
     flumeServerList = getFlume(HostAndPorts.split(','))
     for host in flumeServerList:
         content = exeCmd.execJps(host)
-        if (len(re.findall(flumeServerList.get(host), content)) < 1):
+        if len(re.findall(flumeServerList.get(host), content)) < 1:
             log.warn(host + ' 节点的 ' + 'flume' + ' 服务未运行')
             startFlume(host, 'flume')
         else:

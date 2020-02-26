@@ -17,11 +17,11 @@ log = logger(loggername='kafka')
 
 
 def getKafka(hostAndPorts):
-    dict = {}
+    dicts = {}
     for hostAndPort in hostAndPorts:
         host = hostAndPort.split(':')[0]
-        dict[host] = 'Kafka'
-    return dict
+        dicts[host] = 'Kafka'
+    return dicts
 
 
 def startKafka(host, server):
@@ -35,9 +35,16 @@ def startKafka(host, server):
 def checkServerProcess():
     hostAndPorts = conf.get('kafka.hosts')
     serverlist = getKafka(hostAndPorts.split(','))
+
+    proNum = conf.get('kafka.process.number')
+    if proNum == '':
+        proNum = 1
+    else:
+        proNum = int(proNum)
+
     for host in serverlist:
         content = exeCmd.execJps(host)
-        if (len(re.findall(serverlist.get(host), content)) < 1):
+        if len(re.findall(serverlist.get(host), content)) < proNum:
             log.warn('{host} 节点的  Kafka  服务未运行'.format(host=host))
             startKafka(host, 'Kafka')
         else:

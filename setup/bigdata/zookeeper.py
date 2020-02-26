@@ -17,11 +17,11 @@ log = logger(loggername='zookeeper')
 
 
 def getQuorumPeerMain(hostAndPorts):
-    dict = {}
+    dicts = {}
     for hostAndPort in hostAndPorts:
         host = hostAndPort.split(':')[0]
-        dict[host] = 'QuorumPeerMain'
-    return dict
+        dicts[host] = 'QuorumPeerMain'
+    return dicts
 
 
 def startZk(host, server):
@@ -37,7 +37,7 @@ def checkServerProcess():
     serverlist = getQuorumPeerMain(hostAndPorts.split(','))
     for host in serverlist:
         content = exeCmd.execJps(host)
-        if (len(re.findall(serverlist.get(host), content)) < 1):
+        if len(re.findall(serverlist.get(host), content)) < 1:
             log.warn('{host} 节点的  QuorumPeerMain  服务未运行'.format(host=host))
             startZk(host, 'QuorumPeerMain')
         else:

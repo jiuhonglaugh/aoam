@@ -78,7 +78,7 @@ def checkServerProcess():
     serverlist = getES(hostAndPorts.split(','))
     for host in serverlist:
         content = exeCmd.execJps(host)
-        if (len(re.findall(serverlist.get(host), content)) < 1):
+        if len(re.findall(serverlist.get(host), content)) < 1:
             log.warn(host + ' 节点的 ' + 'Elasticsearch' + ' 服务未运行')
             startES(host, 'Elasticsearch')
         else:

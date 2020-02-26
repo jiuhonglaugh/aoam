@@ -19,6 +19,7 @@ class environment_util:
     ZOOKEEPER_HOME = None
     AZKABAN_HOME = None
     LOGSTATSH_HOME = None
+    FLUME_HOME = None
 
     PREFIX_LOGS = None
     AZKABAN_LOGS = None
@@ -28,6 +29,7 @@ class environment_util:
     KAFKA_LOGS = None
     HADOOP_LOGS = None
     HBASE_LOGS = None
+    FLUME_LOGS = None
     HIVE_LOGS = None
     ELASTICSEARCH_LOGS = None
 
@@ -42,6 +44,7 @@ class environment_util:
         self.LOGSTATSH_LOGS = self.PREFIX_LOGS + '/logstatsh'
         self.KAFKA_LOGS = self.PREFIX_LOGS + '/kafka'
         self.ELASTICSEARCH_LOGS = self.PREFIX_LOGS + '/elasticsearch'
+        self.FLUME_LOGS = self.PREFIX_LOGS + 'flume'
         if os.getenv('HADOOP_HOME') is not None:
             self.HADOOP_HOME = os.getenv('HADOOP_HOME')
         if os.getenv('HBASE_HOME') is not None:
@@ -62,6 +65,8 @@ class environment_util:
             self.LOGSTATSH_HOME = os.getenv('LOGSTATSH_HOME')
         if os.getenv('ZOOKEEPER_HOME') is not None:
             self.ZOOKEEPER_HOME = os.getenv('ZOOKEEPER_HOME')
+        if os.getenv('FLUME_HOME') is not None:
+            self.FLUME_HOME = os.getenv('FLUME_HOME')
 
 
 if __name__ == '__main__':

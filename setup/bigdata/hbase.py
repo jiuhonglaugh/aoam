@@ -27,20 +27,20 @@ def getHbaseXml(configPath):
 
 
 def getHRegionServer(path):
-    dict = {}
+    dicts = {}
     with open(file_util.repairPath(path) + 'regionservers') as r:
         for line in r.readlines():
-            dict[line.strip()] = 'HRegionServer'
-    return dict
+            dicts[line.strip()] = 'HRegionServer'
+    return dicts
 
 
-def getHMaster(keys, dict):
+def getHMaster(keys, dicts):
     key = keys.get('hbase.master')
-    if key in dict:
-        dict[key] = dict[key] + ',HMaster'
+    if key in dicts:
+        dicts[key] = dicts[key] + ',HMaster'
     else:
-        dict[key] = 'HMaster'
-    return dict
+        dicts[key] = 'HMaster'
+    return dicts
 
 
 def checkServerProcess():
@@ -54,7 +54,7 @@ def exeCheckServerProcess():
     for host in serverList:
         content = exeCmd.execJps(host)
         for serverName in serverList.get(host).split(','):
-            if (len(re.findall(serverName, content)) < 1):
+            if len(re.findall(serverName, content)) < 1:
                 log.warn('{host} 节点的  {serverName} 服务未运行'.format(host=host, serverName=serverName))
                 startHbase(host, serverName.lower())
             else:
@@ -65,7 +65,7 @@ def startHbase(host, serverName):
     HBASE_HOME = env.HBASE_HOME
     _shell = 'ansible client -l {host} -a "{HBASE_HOME}/bin/hbase-daemons.sh start '.format(host=host,
                                                                                             HBASE_HOME=HBASE_HOME)
-    if ('hmaster'.find(serverName) >= 0):
+    if 'hmaster'.find(serverName) >= 0:
         log.warn('开始启动  {host} 节点的 {serverName} 服务\n'.format(host=host, serverName=serverName))
         _shell = _shell + 'master"'
         exeCmd.run(_shell)

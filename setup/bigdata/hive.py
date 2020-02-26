@@ -17,21 +17,21 @@ log = logger(loggername='hive')
 
 
 def getHiveServer2(hostAndPorts):
-    dict = {}
+    dicts = {}
     for hostAndPort in hostAndPorts:
         host = hostAndPort.split(':')[0]
-        dict[host] = 'org.apache.hive.service.server.HiveServer2'
-    return dict
+        dicts[host] = 'org.apache.hive.service.server.HiveServer2'
+    return dicts
 
 
-def getHiveMetaStore(keys, dict):
+def getHiveMetaStore(keys, dicts):
     for key in keys:
         key = key.split(':')[0]
-        if key in dict:
-            dict[key] = dict[key] + ',org.apache.hadoop.hive.metastore.HiveMetaStore'
+        if key in dicts:
+            dicts[key] = dicts[key] + ',org.apache.hadoop.hive.metastore.HiveMetaStore'
         else:
-            dict[key] = 'org.apache.hadoop.hive.metastore.HiveMetaStore'
-    return dict
+            dicts[key] = 'org.apache.hadoop.hive.metastore.HiveMetaStore'
+    return dicts
 
 
 def startHive(host, server):
@@ -52,9 +52,9 @@ def checkServerProcess():
     hostAndPorts = conf.get('hive.metastore')
     serverlist = getHiveMetaStore(hostAndPorts.split(','), serverlist)
     for host in serverlist:
-        content = exeCmd.execJps(host)
+        content = exeCmd.execJps(host, 'ansible client -l {host} -a "jps -m"')
         for server in serverlist.get(host).split(','):
-            if (len(re.findall(server, content)) < 1):
+            if len(re.findall(server, content)) < 1:
                 log.warn('{host} 节点的 {server} 服务未运行'.format(host=host, server=server))
                 startHive(host, server)
             else:

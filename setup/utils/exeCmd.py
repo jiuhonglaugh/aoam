@@ -37,8 +37,8 @@ def getstatusgetoutput(cmd):
     return sbp.getstatusoutput(cmd)
 
 
-def execJps(host):
-    return Popen('ansible client -l {host} -a "jps"'.format(host=host))
+def execJps(host, exec='ansible client -l {host} -a "jps"'):
+    return Popen(exec.format(host=host))
 
 
 def Popen(cmd):

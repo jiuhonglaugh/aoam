@@ -141,3 +141,119 @@
 2020-02-24 11:16:04,034  logger.py : WARNING  开始启动  test 节点的 hmaster 服务
 
 2020-02-24 11:16:04,034  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hbase-daemons.sh start master" 命令
+2020-02-25 17:32:06,443  logger.py : WARNING  test 节点的 DataNode 服务未运行
+2020-02-25 17:32:06,444  logger.py : WARNING  开始启动 test 节点的 datanode 服务
+2020-02-25 17:32:06,444  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start datanode" 命令
+2020-02-25 17:32:06,472  logger.py : WARNING  test 节点的 NodeManager 服务未运行
+2020-02-25 17:32:06,472  logger.py : WARNING  开始启动 test 节点的 nodemanager 服务
+2020-02-25 17:32:06,472  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start nodemanager" 命令
+2020-02-25 17:32:06,502  logger.py : WARNING  test 节点的 NameNode 服务未运行
+2020-02-25 17:32:06,502  logger.py : WARNING  开始启动 test 节点的 namenode 服务
+2020-02-25 17:32:06,502  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start namenode" 命令
+2020-02-25 17:32:06,531  logger.py : WARNING  test 节点的 SecondaryNameNode 服务未运行
+2020-02-25 17:32:06,531  logger.py : WARNING  开始启动 test 节点的 secondarynamenode 服务
+2020-02-25 17:32:06,531  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/hadoop-daemon.sh start secondarynamenode" 命令
+2020-02-25 17:32:06,558  logger.py : WARNING  test 节点的 ResourceManager 服务未运行
+2020-02-25 17:32:06,559  logger.py : WARNING  开始启动 test 节点的 resourcemanager 服务
+2020-02-25 17:32:06,559  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/yarn-daemon.sh start resourcemanager" 命令
+2020-02-25 17:32:06,586  logger.py : WARNING  test 节点的 JobHistoryServer 服务未运行
+2020-02-25 17:32:06,587  logger.py : WARNING  开始启动 test 节点的 jobhistoryserver 服务
+2020-02-25 17:32:06,587  logger.py : INFO  开始执行 ansible client -l test -a "E:\soft\hadoop/sbin/mr-jobhistory-daemon.sh start historyserver" 命令
+2020-02-25 17:32:06,615  logger.py : WARNING  检测到有 6 个hadoop进程重启
+2020-02-25 18:46:06,061  logger.py : WARNING  172.10.10.132 节点的 flume 服务未运行
+2020-02-25 18:46:06,064  logger.py : WARNING  开始启动 172.10.10.132 节点的 flume 服务
+
+2020-02-25 18:46:06,064  logger.py : INFO  开始执行 ansible client -l 172.10.10.132 -a "None/nginx-flume.sh start " 命令
+2020-02-25 18:46:06,118  logger.py : WARNING  172.10.10.131 节点的 flume 服务未运行
+2020-02-25 18:46:06,118  logger.py : WARNING  开始启动 172.10.10.131 节点的 flume 服务
+
+2020-02-25 18:46:06,118  logger.py : INFO  开始执行 ansible client -l 172.10.10.131 -a "None/nginx-flume.sh start " 命令
+2020-02-25 18:46:28,558  logger.py : WARNING  172.10.10.131 节点的 flume 服务未运行
+2020-02-25 18:46:28,559  logger.py : WARNING  开始启动 172.10.10.131 节点的 flume 服务
+
+2020-02-25 18:46:28,559  logger.py : INFO  开始执行 ansible client -l 172.10.10.131 -a "None/nginx-flume.sh start " 命令
+2020-02-25 19:27:49,396  logger.py : WARNING  172.10.10.131 节点的 flume 服务未运行
+2020-02-26 09:11:46,245  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 09:11:46,246  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 09:11:46,247  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 14:59:45,732  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 14:59:45,733  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 14:59:45,733  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:01:28,952  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:01:28,952  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:01:28,952  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:02:04,492  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:02:04,492  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:02:04,492  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:02:09,925  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:02:09,925  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:02:09,925  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:02:21,579  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:02:21,579  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:02:21,579  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:02:28,555  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:02:28,556  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:02:28,556  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:02:38,237  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:02:38,237  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:02:38,237  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:05:29,845  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:05:29,845  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:05:29,845  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:05:35,294  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:05:35,294  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:05:35,294  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:05:47,925  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:05:47,926  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:05:47,926  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:08:02,307  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:08:02,307  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:08:02,307  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:08:15,945  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:08:15,945  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:08:15,945  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:12:16,731  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:12:16,731  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:12:16,732  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:12:29,870  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:12:29,871  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:12:29,871  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:12:35,757  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:12:35,757  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:12:35,757  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:13:11,970  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:13:11,971  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:13:11,971  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:13:16,326  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:13:16,326  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:13:16,327  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:14:10,739  logger.py : WARNING  test 节点的  Kafka  服务未运行
+2020-02-26 15:14:10,739  logger.py : WARNING  开始启动 test 节点的 Kafka 服务
+
+2020-02-26 15:14:10,739  logger.py : INFO  开始执行 ansible client -l test -a "None/start.sh" 命令
+2020-02-26 15:16:17,110  logger.py : WARNING  test 节点的  HRegionServer 服务未运行
+2020-02-26 15:16:17,110  logger.py : WARNING  开始启动 test 节点的 hregionserver 服务
+
+2020-02-26 15:16:17,110  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hbase-daemons.sh start regionserver" 命令
+2020-02-26 15:16:17,138  logger.py : WARNING  test 节点的  HMaster 服务未运行
+2020-02-26 15:16:17,138  logger.py : WARNING  开始启动  test 节点的 hmaster 服务
+
+2020-02-26 15:16:17,138  logger.py : INFO  开始执行 ansible client -l test -a "None/bin/hbase-daemons.sh start master" 命令
