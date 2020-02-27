@@ -3,9 +3,9 @@
 
 
 import sys
-
 sys.path.append('/zywa/aoam')
 import re
+
 from setup.utils.logger import logger
 from setup.utils import config_util
 from setup.utils import exeCmd

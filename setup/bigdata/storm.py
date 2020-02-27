@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 import sys
-
 sys.path.append('/zywa/aoam')
+import re
+import os
+
 from setup.utils.logger import logger
 from setup.utils import config_util
 from setup.utils import exeCmd
-import re
-import os
 
 conf = config_util.getDict('storm')
 log = logger(loggername='storm')

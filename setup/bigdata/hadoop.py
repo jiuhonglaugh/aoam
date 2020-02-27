@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-from hdfs import InsecureClient
+#from hdfs import InsecureClient
 import sys
-
 sys.path.append('/zywa/aoam')
 import re
+
 from setup.utils.logger import logger
 from setup.utils import time_util
 from setup.utils import file_util
@@ -16,10 +16,11 @@ from setup.utils.environment_util import environment_util
 env = environment_util()
 log = logger(loggername='hadoop')
 hdfsXml = xml_util.getXml('../config/hdfs-site.xml', 'property')
+'''
 client = InsecureClient('http://' + hdfsXml['dfs.http.address'], user='hadoop', root='/')
 
 '''
-创建hdfs文件夹
+#创建hdfs文件夹
 '''
 
 
@@ -54,7 +55,7 @@ def checkService():
     hdfspath = '/aoam/'
     fileName = 'aoam.txt'
     _createFile(hdfspath, fileName, data)
-
+'''
 
 def getHadoopXml(configPath):
     hadoopXml = {}
@@ -147,7 +148,7 @@ def exeCheckServerProcess():
         log.warn("检测到有 {startNum} 个hadoop进程重启".format(startNum=startNum))
         time_util.sleep(30)
     log.info('开始测试hadoop服务是否可用')
-    checkService()
+    # checkService()
 
 
 def start_hadoop(host, serverName):

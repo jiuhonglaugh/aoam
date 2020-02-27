@@ -2,9 +2,9 @@
 # -*- coding:utf-8 -*-
 
 import sys
-
 sys.path.append('/zywa/aoam')
 import re
+
 from setup.utils.logger import logger
 from setup.utils import file_util
 from setup.utils import xml_util

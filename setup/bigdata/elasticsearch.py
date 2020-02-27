@@ -2,11 +2,12 @@
 # -*- coding:utf-8 -*-
 import sys
 sys.path.append('/zywa/aoam')
+import re
+import os
+
 from setup.utils.logger import logger
 from setup.utils import config_util
 from setup.utils import exeCmd
-import re
-import os
 #from elasticsearch import Elasticsearch
 
 conf = config_util.getDict('elasticsearch')
