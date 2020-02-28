@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 AOAM_HOME=$(cd `dirname $0`; pwd)
-if [ ! -d '$AOAO_HOME/bin' ] || [ ! -d '$AOAM_HOME/sbin' ];then
+if [ ! -d "$AOAO_HOME/bin" ] || [ ! -d "$AOAM_HOME/sbin" ];then
      AOAM_HOME=$(cd `dirname $0`/..; pwd)
 fi
 $AOAM_HOME/bin/azkaban.py
