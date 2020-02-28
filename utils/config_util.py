@@ -2,14 +2,14 @@
 # -*- coding:utf-8 -*-
 
 import configparser
-import os
+
+from os.path import dirname, abspath
 
 """
 获取配置文件信息
 """
+configPath = dirname(dirname(abspath(__file__))) + '/config/application.properties'
 
-root_dir = os.path.dirname(os.path.abspath('.'))
-configPath = os.path.join(root_dir, "config/application.properties")
 ###必须使用RawConfigParser()，否则会报错
 cf = configparser.RawConfigParser()
 # 读取配置文件，如果写文件的绝对路径，就可以不用os模块
