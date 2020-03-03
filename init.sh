@@ -18,10 +18,10 @@ fi
 /bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/elasticsearch.py
 /bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/flume.py
 /bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/hadoop.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/habse.py
+/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/hbase.py
 /bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/hive.py
 /bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/kafka.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/logstats.py
+/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/logstash.py
 /bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/storm.py
 /bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/tomcat.py
 /bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/zookeeper.py
