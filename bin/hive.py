@@ -57,7 +57,7 @@ def checkServerProcess():
                 log.warn('{host} 节点 {server} 服务未运行'.format(host=host, server=server))
                 startHive(host, server)
             else:
-                log.info('{host} 节点  {server} 服务正在运行'.format(host=host, server=server))
+                log.info('{host} 节点 {server} 服务正在运行'.format(host=host, server=server))
 
 
 if __name__ == '__main__':

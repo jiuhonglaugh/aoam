@@ -57,7 +57,7 @@ def checkServerProcess():
                 log.warn('{host} 节点 {serverName} 服务未运行'.format(host=host, serverName=serverName))
                 startAzkaban(host, serverName)
             else:
-                log.info('{host} 节点  {serverName} 服务正在运行'.format(host=host, serverName=serverName))
+                log.info('{host} 节点 {serverName} 服务正在运行'.format(host=host, serverName=serverName))
 
 
 if __name__ == '__main__':

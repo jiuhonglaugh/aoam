@@ -83,7 +83,7 @@ def checkServerProcess():
             log.warn(host + ' 节点 ' + 'Elasticsearch' + ' 服务未运行')
             startES(host, 'Elasticsearch')
         else:
-            log.info(host + ' 节点 ' + ' Elasticsearch ' + '服务正在运行')
+            log.info(host + ' 节点 ' + 'Elasticsearch ' + '服务正在运行')
 
 
 if __name__ == '__main__':

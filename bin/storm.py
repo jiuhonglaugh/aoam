@@ -99,14 +99,14 @@ def checkServerProcess():
             log.warn(host + ' 节点 ' + 'Storm---UI' + ' 服务未运行')
             startUi(host, 'Storm')
         else:
-            log.info(host + ' 节点 ' + ' Storm---UI ' + '服务正在运行')
+            log.info(host + ' 节点 ' + 'Storm---UI ' + '服务正在运行')
     for host in nimbusServerList:
         content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
         if (len(re.findall(nimbusServerList.get(host), content)) < 1):
             log.warn(host + ' 节点 ' + 'Storm---nimbus' + ' 服务未运行')
             startNimbus(host, 'Storm')
         else:
-            log.info(host + ' 节点 ' + ' Storm---nimbus ' + '服务正在运行')
+            log.info(host + ' 节点 ' + 'Storm---nimbus ' + '服务正在运行')
     for host in supervisorServerList:
         content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
         if (len(re.findall(supervisorServerList.get(host), content)) < 1):

@@ -37,10 +37,10 @@ def checkServerProcess():
     for host in serverlist:
         content = exeCmd.execJps(host)
         if len(re.findall(serverlist.get(host), content)) < 1:
-            log.warn('{host} 节点  QuorumPeerMain  服务未运行'.format(host=host))
+            log.warn('{host} 节点 QuorumPeerMain 服务未运行'.format(host=host))
             startZk(host, 'QuorumPeerMain')
         else:
-            log.info('{host} 节点   QuorumPeerMain  服务正在运行'.format(host=host))
+            log.info('{host} 节点 QuorumPeerMain 服务正在运行'.format(host=host))
 
 
 if __name__ == '__main__':
