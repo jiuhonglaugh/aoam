@@ -4,6 +4,7 @@
 import logging
 
 from utils import config_util
+from utils import time_util
 
 conf = config_util.getDict('log-conf')
 
@@ -22,7 +23,9 @@ class logger:
         sh.setFormatter(fmt)
         sh.setLevel(getLevel(conf.get('logs.clevel')))
         # 设置文件日志
-        fh = logging.FileHandler(filename=conf.get('logs.path'), encoding='utf-8')
+
+        fh = logging.FileHandler(filename=sP(conf.get('logs.path'), split='/'),
+                                 encoding='utf-8')
         fh.setFormatter(fmt)
         fh.setLevel(getLevel(conf.get('logs.flevel')))
         self.logger.addHandler(sh)
@@ -55,6 +58,17 @@ def getLevel(level):
         return logging.INFO
 
 
+def sP(oldPath, split='/'):
+    args = oldPath.split(split)
+    fileName = args[-1]
+    fileLen = len(args[-1])
+    filepath = oldPath[:-fileLen] + time_util.getTime('%Y-%m-%d') + '-' + fileName
+    return filepath
+
+
 if __name__ == '__main__':
     log = logger()
     log.info("asd")
+    #
+    # for str in strs.split('/'):
+    #     print(str)

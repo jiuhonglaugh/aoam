@@ -10,3 +10,6 @@ def getTime(format='%Y-%m-%d %H:%M:%S'):
 
 def sleep(mm):
     time.sleep(mm)
+
+if __name__ == '__main__':
+    print(getTime(format='%Y-%m-%d'))
