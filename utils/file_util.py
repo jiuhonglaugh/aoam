@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- encoding:utf-8 -*-
-
+from os.path import dirname, abspath
 
 '''
 判断路径最后一位是不是 /
@@ -46,3 +46,21 @@ def writeFile(str, path, lf=True):
         _writeFileLf(str, path)
     else:
         _writeFile(str, path)
+
+
+def readConfig(fileName):
+    confPath = getConfigPath()
+    with open(repairPath(confPath) + fileName) as r:
+        return r.readlines()
+
+
+def getHome():
+    return dirname(dirname(abspath(__file__)))
+
+
+def getConfigPath():
+    return getHome() + '/config'
+
+
+if __name__ == '__main__':
+    print(getConfigPath())

@@ -35,7 +35,7 @@ def getHiveMetaStore(keys, dicts):
 
 def startHive(host, server):
     HIVE_HOME = env.HIVE_HOME
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
+    log.warn('开始启动 ' + host + ' 节点 ' + server + ' 服务')
     _shell = 'ansible client -l {host} -a "{HIVE_HOME}/'.format(host=host, HIVE_HOME=HIVE_HOME)
     if "org.apache.hadoop.hive.metastore.HiveMetaStore".find(server) >= 0:
         _shell = _shell + '{scriptName}"'.format(scriptName=conf.get('hive.metastore.start.script'))
@@ -54,7 +54,7 @@ def checkServerProcess():
         content = exeCmd.execJps(host, 'ansible client -l {host} -a "jps -m"')
         for server in serverlist.get(host).split(','):
             if len(re.findall(server, content)) < 1:
-                log.warn('{host} 节点的 {server} 服务未运行'.format(host=host, server=server))
+                log.warn('{host} 节点 {server} 服务未运行'.format(host=host, server=server))
                 startHive(host, server)
             else:
                 log.info('{host} 节点  {server} 服务正在运行'.format(host=host, server=server))

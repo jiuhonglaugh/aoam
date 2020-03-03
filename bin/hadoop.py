@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-#from hdfs import InsecureClient
+# from hdfs import InsecureClient
 import sys
+
 sys.path.append('/zywa/aoam')
 import re
 
@@ -12,12 +13,13 @@ from utils.environment_util import environment_util
 
 env = environment_util()
 log = logger(loggername='hadoop')
-hdfsXml = xml_util.getXml('../config/hdfs-site.xml', 'property')
+
 '''
+hdfsXml = xml_util.getXml('hdfs-site.xml', 'property')
 client = InsecureClient('http://' + hdfsXml['dfs.http.address'], user='hadoop', root='/')
 
 '''
-#创建hdfs文件夹
+# 创建hdfs文件夹
 '''
 
 
@@ -28,7 +30,7 @@ def _mkdir(path):
 def _createFile(path, fileName, data):
     _mkdir(path)
     filePath = file_util.repairPath(path) + fileName
-    log.info('开始删除hdfs上的' + filePath + '文件')
+    log.info('开始删除hdfs上' + filePath + '文件')
     if _delete(filePath):
         with client.write(filePath, append=False) as w:
             log.info('开始向hdfs测试写入' + filePath + '文件')
@@ -54,33 +56,34 @@ def checkService():
     _createFile(hdfspath, fileName, data)
 '''
 
-def getHadoopXml(configPath):
+
+def getHadoopXml():
     hadoopXml = {}
-    tmp = xml_util.getXml(configPath + 'hdfs-site.xml', 'property')
+    tmp = xml_util.getXml('hdfs-site.xml', 'property')
     hadoopXml['dfs.http.address'] = tmp.get('dfs.http.address')
     hadoopXml['dfs.namenode.secondary.http-address'] = tmp.get('dfs.namenode.secondary.http-address')
 
-    tmp = xml_util.getXml(configPath + 'core-site.xml', 'property')
+    tmp = xml_util.getXml('core-site.xml', 'property')
     hadoopXml['fs.defaultFS'] = tmp.get('fs.defaultFS')
 
-    tmp = xml_util.getXml(configPath + 'yarn-site.xml', 'property')
+    tmp = xml_util.getXml('yarn-site.xml', 'property')
     hadoopXml['yarn.resourcemanager.webapp.address'] = tmp.get('yarn.resourcemanager.webapp.address')
     hadoopXml['yarn.resourcemanager.hostname'] = tmp.get('yarn.resourcemanager.hostname')
     hadoopXml['yarn.log.server.web-service.url'] = tmp.get('yarn.log.server.web-service.url')
     hadoopXml['yarn.log.server.url'] = tmp.get('yarn.log.server.url')
 
-    tmp = xml_util.getXml(configPath + 'mapred-site.xml', 'property')
+    tmp = xml_util.getXml('mapred-site.xml', 'property')
     hadoopXml['mapreduce.jobhistory.address'] = tmp.get('mapreduce.jobhistory.address')
     hadoopXml['mapreduce.jobhistory.webapp.address'] = tmp.get('mapreduce.jobhistory.webapp.address')
 
     return hadoopXml
 
 
-def getDataNodeAndNodeManager(path):
+def getDataNodeAndNodeManager():
     dicts = {}
-    with open(file_util.repairPath(path) + 'slaves') as r:
-        for line in r.readlines():
-            dicts[line.strip()] = 'DataNode,NodeManager'
+    lines = file_util.readConfig('slaves')
+    for line in lines:
+        dicts[line.strip()] = 'DataNode,NodeManager'
     return dicts
 
 
@@ -121,8 +124,8 @@ def getHistoryServer(keys, dicts):
 
 
 def checkServerProcess():
-    dictXml = getHadoopXml(file_util.repairPath('../config/'))
-    serverProcess = getDataNodeAndNodeManager('../config/')
+    dictXml = getHadoopXml()
+    serverProcess = getDataNodeAndNodeManager()
     serverProcess = getNameNode(dictXml, serverProcess)
     serverProcess = getSecondNameNode(dictXml, serverProcess)
     serverProcess = getResourceManager(dictXml, serverProcess)
@@ -136,7 +139,7 @@ def exeCheckServerProcess():
         content = exeCmd.execJps(host)
         for server in serverList.get(host).split(','):
             if len(re.findall(server, content)) < 1:
-                log.warn('{host} 节点的 {server} 服务未运行'.format(host=host, server=server))
+                log.warn('{host} 节点 {server} 服务未运行'.format(host=host, server=server))
                 start_hadoop(host, server.lower())
                 startNum += 1
             else:
@@ -152,15 +155,15 @@ def start_hadoop(host, serverName):
     HADOOP_HOME = env.HADOOP_HOME
     _shell = 'ansible client -l {host} -a "{HADOOP_HOME}/sbin/'.format(host=host, HADOOP_HOME=HADOOP_HOME)
     if 'secondarynamenodenamenodedatanode'.find(serverName) >= 0:
-        log.warn('开始启动 {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
+        log.warn('开始启动 {host} 节点 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'hadoop-daemon.sh start {serverName}"'.format(serverName=serverName)
         exeCmd.run(_shell)
     elif 'resourcemanagernodemanager'.find(serverName) >= 0:
-        log.warn('开始启动 {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
+        log.warn('开始启动 {host} 节点 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'yarn-daemon.sh start {serverName}"'.format(serverName=serverName)
         exeCmd.run(_shell)
     else:
-        log.warn('开始启动 {host} 节点的 {serverName} 服务'.format(host=host, serverName=serverName))
+        log.warn('开始启动 {host} 节点 {serverName} 服务'.format(host=host, serverName=serverName))
         _shell = _shell + 'mr-jobhistory-daemon.sh start historyserver"'
         exeCmd.run(_shell)
 

@@ -65,7 +65,7 @@ def getSupervisor(hostAndPorts):
 def startNimbus(host, server):
     STORM_HOME = os.getenv('STORM_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
+    log.warn('开始启动 ' + host + ' 节点 ' + server + ' 服务')
     _shell = _shell + '{STORM_HOME}/start-Nimbus.sh"'.format(STORM_HOME=STORM_HOME)
     exeCmd.run(_shell)
 
@@ -73,7 +73,7 @@ def startNimbus(host, server):
 def startSupervisor(host, server):
     STORM_HOME = os.getenv('STORM_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
+    log.warn('开始启动 ' + host + ' 节点 ' + server + ' 服务')
     _shell = _shell + '{STORM_HOME}/start-Supervisor.sh"'.format(STORM_HOME=STORM_HOME)
     exeCmd.run(_shell)
 
@@ -81,7 +81,7 @@ def startSupervisor(host, server):
 def startUi(host, server):
     STORM_HOME = os.getenv('STORM_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
+    log.warn('开始启动 ' + host + ' 节点 ' + server + ' 服务')
     _shell = _shell + '{STORM_HOME}/start-Ui.sh"'.format(STORM_HOME=STORM_HOME)
     exeCmd.run(_shell)
 
@@ -96,24 +96,24 @@ def checkServerProcess():
     for host in coreServerList:
         content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
         if (len(re.findall(coreServerList.get(host), content)) < 1):
-            log.warn(host + ' 节点的 ' + 'Storm---UI' + ' 服务未运行')
+            log.warn(host + ' 节点 ' + 'Storm---UI' + ' 服务未运行')
             startUi(host, 'Storm')
         else:
-            log.info(host + ' 节点的 ' + ' Storm---UI ' + '服务正在运行')
+            log.info(host + ' 节点 ' + ' Storm---UI ' + '服务正在运行')
     for host in nimbusServerList:
         content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
         if (len(re.findall(nimbusServerList.get(host), content)) < 1):
-            log.warn(host + ' 节点的 ' + 'Storm---nimbus' + ' 服务未运行')
+            log.warn(host + ' 节点 ' + 'Storm---nimbus' + ' 服务未运行')
             startNimbus(host, 'Storm')
         else:
-            log.info(host + ' 节点的 ' + ' Storm---nimbus ' + '服务正在运行')
+            log.info(host + ' 节点 ' + ' Storm---nimbus ' + '服务正在运行')
     for host in supervisorServerList:
         content = exeCmd.Popen('ansible client -l ' + host + ' -a "jps"')
         if (len(re.findall(supervisorServerList.get(host), content)) < 1):
-            log.warn(host + ' 节点的 ' + 'Storm---supervisor' + ' 服务未运行')
+            log.warn(host + ' 节点 ' + 'Storm---supervisor' + ' 服务未运行')
             startSupervisor(host, 'Storm')
         else:
-            log.info(host + ' 节点的 ' + 'Storm---supervisor' + '服务正在运行')
+            log.info(host + ' 节点 ' + 'Storm---supervisor' + '服务正在运行')
 
 
 if __name__ == '__main__':

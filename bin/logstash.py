@@ -63,7 +63,7 @@ def getLogstash(hostAndPorts):
 def startLogstash(host, server):
     LOGSTASH_HOME = os.getenv('LOGSTASH_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
+    log.warn('开始启动 ' + host + ' 节点 ' + server + ' 服务')
     _shell = _shell + '{LOGSTASH_HOME}/start-logstash.sh"'.format(LOGSTASH_HOME=LOGSTASH_HOME)
     exeCmd.run(_shell)
 
@@ -74,10 +74,10 @@ def checkServerProcess():
     for host in logstashServerList:
         content = exeCmd.execJps(host)
         if (len(re.findall(logstashServerList.get(host), content)) < 1):
-            log.warn(host + ' 节点的 ' + 'logstash' + ' 服务未运行')
+            log.warn(host + ' 节点 ' + 'logstash' + ' 服务未运行')
             startLogstash(host, 'logstash')
         else:
-            log.info(host + ' 节点的 ' + 'Logstash' + '服务正在运行')
+            log.info(host + ' 节点 ' + 'Logstash' + '服务正在运行')
 
 if __name__ == '__main__':
     checkServerProcess()

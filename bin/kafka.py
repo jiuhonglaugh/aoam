@@ -26,7 +26,7 @@ def getKafka(hostAndPorts):
 
 def startKafka(host, server):
     KAFKA_HOME = env.KAFKA_HOME
-    log.warn('开始启动 {host} 节点的 {server} 服务'.format(host=host, server=server))
+    log.warn('开始启动 {host} 节点 {server} 服务'.format(host=host, server=server))
     _shell = 'ansible client -l {host} -a "{KAFKA_HOME}'.format(host=host, KAFKA_HOME=KAFKA_HOME)
     _shell = _shell + '/{scriptName}"'.format(scriptName=conf.get('kafka.start.script'))
     exeCmd.run(_shell)
@@ -47,10 +47,10 @@ def checkServerProcess():
         nowProNum = len(re.findall(serverlist.get(host), content))
 
         if nowProNum < proNum:
-            log.warn('{host} 节点的 {proNum} 个 Kafka 服务未运行'.format(host=host, proNum=(proNum - nowProNum)))
+            log.warn('{host} 节点 {proNum} 个 Kafka 服务未运行'.format(host=host, proNum=(proNum - nowProNum)))
             startKafka(host, 'Kafka')
         else:
-            log.info('{host} 节点的 {proNum} 个 Kafka  服务正在运行'.format(host=host, proNum=proNum))
+            log.info('{host} 节点 {proNum} 个 Kafka  服务正在运行'.format(host=host, proNum=proNum))
 
 
 if __name__ == '__main__':

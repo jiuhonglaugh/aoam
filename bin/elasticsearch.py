@@ -53,23 +53,23 @@ def getES(hostAndPorts):
     isExist = checkExistPort(hostAndPorts)
     for hostAndPort in hostAndPorts:
         if isExist == True:
-            host = hostAndPort.split(':')[0]   #有IP的，有端口
+            host = hostAndPort.split(':')[0]   #有IP，有端口
             dict[host] = 'Elasticsearch'
         else:
-            dict[hostAndPort] = 'Elasticsearch'  #如果只有IP的，无端口
+            dict[hostAndPort] = 'Elasticsearch'  #如果只有IP，无端口
     return dict
 
 '''
 def startES(host, server):
     ELASTICSEARCH_HOME = os.getenv('ELASTICSEARCH_HOME')
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
+    log.warn('开始启动 ' + host + ' 节点 ' + server + ' 服务')
     _shell = 'ansible client -l ' + host + ' -a "' + ELASTICSEARCH_HOME + '/start.sh"'
     exeCmd.run(_shell)
 '''
 def startES(host, server):
     ELASTICSEARCH_HOME = os.getenv('ELASTICSEARCH_HOME')
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
+    log.warn('开始启动 ' + host + ' 节点 ' + server + ' 服务')
     _shell = _shell +  '{ELASTICSEARCH_HOME}/start.sh"'.format(ELASTICSEARCH_HOME=ELASTICSEARCH_HOME)
     exeCmd.run(_shell)
 
@@ -80,10 +80,10 @@ def checkServerProcess():
     for host in serverlist:
         content = exeCmd.execJps(host)
         if (len(re.findall(serverlist.get(host), content)) < 1):
-            log.warn(host + ' 节点的 ' + 'Elasticsearch' + ' 服务未运行')
+            log.warn(host + ' 节点 ' + 'Elasticsearch' + ' 服务未运行')
             startES(host, 'Elasticsearch')
         else:
-            log.info(host + ' 节点的 ' + ' Elasticsearch ' + '服务正在运行')
+            log.info(host + ' 节点 ' + ' Elasticsearch ' + '服务正在运行')
 
 
 if __name__ == '__main__':

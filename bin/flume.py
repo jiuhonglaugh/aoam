@@ -64,7 +64,7 @@ def getFlume(hostAndPorts):
 def startFlume(host, server):
     FLUME_HOME = env.FLUME_HOME
     _shell = 'ansible client -l ' + host + ' -a "'
-    log.warn('开始启动 ' + host + ' 节点的 ' + server + ' 服务')
+    log.warn('开始启动 ' + host + ' 节点 ' + server + ' 服务')
     _shell = _shell + '{FLUME_HOME}/nginx-flume.sh start "'.format(FLUME_HOME=FLUME_HOME)
     exeCmd.run(_shell)
 
@@ -75,10 +75,10 @@ def checkServerProcess():
     for host in flumeServerList:
         content = exeCmd.execJps(host)
         if len(re.findall(flumeServerList.get(host), content)) < 1:
-            log.warn(host + ' 节点的 ' + 'flume' + ' 服务未运行')
+            log.warn(host + ' 节点 ' + 'flume' + ' 服务未运行')
             startFlume(host, 'flume')
         else:
-            log.info(host + ' 节点的 ' + 'flume' + '服务正在运行')
+            log.info(host + ' 节点 ' + 'flume' + '服务正在运行')
 
 if __name__ == '__main__':
     checkServerProcess()

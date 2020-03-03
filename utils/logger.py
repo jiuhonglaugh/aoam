@@ -24,7 +24,7 @@ class logger:
         sh.setLevel(getLevel(conf.get('logs.clevel')))
         # 设置文件日志
 
-        fh = logging.FileHandler(filename=sP(conf.get('logs.path'), split='/'),
+        fh = logging.FileHandler(filename=sP(conf.get('logs.path'), symbol='/'),
                                  encoding='utf-8')
         fh.setFormatter(fmt)
         fh.setLevel(getLevel(conf.get('logs.flevel')))
@@ -58,8 +58,8 @@ def getLevel(level):
         return logging.INFO
 
 
-def sP(oldPath, split='/'):
-    args = oldPath.split(split)
+def sP(oldPath, symbol='/'):
+    args = oldPath.split(symbol)
     fileName = args[-1]
     fileLen = len(args[-1])
     filepath = oldPath[:-fileLen] + time_util.getTime('%Y-%m-%d') + '-' + fileName
@@ -67,8 +67,10 @@ def sP(oldPath, split='/'):
 
 
 if __name__ == '__main__':
-    log = logger()
-    log.info("asd")
+    # log = logger()
+    # log.info("asd")
+
+    print(sP('../logs/aoam.log','/'))
     #
     # for str in strs.split('/'):
     #     print(str)
