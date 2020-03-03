@@ -1,6 +1,0 @@
-Hadoop 2.9.0
-Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 756ebc8394e473ac25feac05fa493f6d612e6c50
-Compiled by arsuresh on 2017-11-13T23:15Z
-Compiled with protoc 2.5.0
-From source with checksum 0a76a9a32a5257331741f8d5932f183
-This command was run using /zywa/setup/hadoop-2.9.0/share/hadoop/common/hadoop-common-2.9.0.jar

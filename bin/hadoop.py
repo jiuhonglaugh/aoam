@@ -147,7 +147,7 @@ def exeCheckServerProcess():
     if startNum > 0:
         log.warn("检测到有 {startNum} 个hadoop进程重启".format(startNum=startNum))
         time_util.sleep(30)
-    log.info('开始测试hadoop服务是否可用')
+    # log.info('开始测试hadoop服务是否可用')
     # checkService()
 
 
