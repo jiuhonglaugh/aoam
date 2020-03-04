@@ -10,16 +10,16 @@
             zookeeper.hosts=IP:PORT,IP:PORT
         [kafka]
             kafka.hosts=IP:PORT,IP:PORT
-            kafka.start.script='Kafka家目录下对应启动脚本'
-            kafka.process.number='单个节点上有多少个Kafka进程实例'
+            kafka.start.script=             'Kafka家目录下对应启动脚本'
+            kafka.process.number=           '单个节点上有多少个Kafka进程实例'
         [azkaban]
             azkaban.web.hosts=IP:PORT,IP:PORT
             azkaban.exe.hosts=IP:PORT,IP:PORT
         [hive]
             hive.server2=IP:PORT,IP:PORT
             hive.metastore=IP:PORT,IP:PORT
-            hive.metastore.start.script='Hive家目录下对应的启动脚本'
-            hive.server2.start.script='Hive家目录下对应的启动脚本'
+            hive.metastore.start.script=    'Hive家目录下对应的启动脚本'
+            hive.server2.start.script=      'Hive家目录下对应的启动脚本'
         [elasticsearch]
             es.hosts=IP:PORT,IP:PORT,IP:PORT
         [storm]
@@ -31,8 +31,8 @@
             flume.hosts=IP,IP
         [tomcat]
             tomcat.hosts=IP:PORT,IP:PORT
-            tomcat.process.number='单个节点上有多少个Tomcat进程实例'
-            tomcat.start.script.path=' Tomcat 启动脚本路径'
+            tomcat.process.number=1,1        '单个节点上有多少个Tomcat进程实例'
+            tomcat.start.script.path=        'Tomcat 启动脚本路径'
 ###调用逻辑
     sbin/start-All.sh
         sbin/start-backend.sh
