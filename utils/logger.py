@@ -5,6 +5,7 @@ import logging
 
 from utils import config_util
 from utils import time_util
+from utils import file_util
 
 conf = config_util.getDict('log-conf')
 
@@ -23,9 +24,9 @@ class logger:
         sh.setFormatter(fmt)
         sh.setLevel(getLevel(conf.get('logs.clevel')))
         # 设置文件日志
+        logsPath = file_util.getHome() + '/logs/aoam.log'
 
-        fh = logging.FileHandler(filename=sP(conf.get('logs.path'), symbol='/'),
-                                 encoding='utf-8')
+        fh = logging.FileHandler(filename=sP(logsPath), encoding='utf-8')
         fh.setFormatter(fmt)
         fh.setLevel(getLevel(conf.get('logs.flevel')))
         self.logger.addHandler(sh)
@@ -70,7 +71,7 @@ if __name__ == '__main__':
     # log = logger()
     # log.info("asd")
 
-    print(sP('../logs/aoam.log','/'))
+    print(sP('../logs/aoam.log', '/'))
     #
     # for str in strs.split('/'):
     #     print(str)
