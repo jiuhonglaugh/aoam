@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-AOAM_HOME=$(cd `dirname $0`; pwd)
+if [ ! -f "$AOAM_HOME"  ];then
+  AOAM_HOME=$(cd `dirname $0`; pwd)
+fi
 if [ ! -d "$AOAO_HOME/bin" ] || [ ! -d "$AOAM_HOME/sbin" ];then
      AOAM_HOME=$(cd `dirname $0`/..; pwd)
 fi
@@ -14,14 +16,16 @@ fi
 [ ! -d "$AOAM_HOME/logs" ] && /bin/mkdir $AOAM_HOME/logs
 
 /bin/echo "初始化 Python 脚本中的 sys.path.append 追加的模块路径"
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/azkaban.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/elasticsearch.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/flume.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/hadoop.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/hbase.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/hive.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/kafka.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/logstash.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/storm.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/tomcat.py
-/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/zookeeper.py
+/bin/sed -i s%/zywa/aoam%$AOAM_HOME%g $AOAM_HOME/bin/*.py
+
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/azkaban.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/elasticsearch.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/flume.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/hadoop.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/hbase.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/hive.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/kafka.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/logstash.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/storm.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/tomcat.py
+#/bin/sed -i "s#/zywa/aoam#"$AOAM_HOME"#g" $AOAM_HOME/bin/zookeeper.py

@@ -18,10 +18,15 @@ log = logger(loggername='tomcat')
 
 def getBootstrap(hostAndPorts):
     dicts = {}
+    proNumDicts = {}
+    proNums = conf.get('tomcat.process.number').split(',')
+    i = 0
     for hostAndPort in hostAndPorts:
         host = hostAndPort.split(':')[0]
         dicts[host] = 'Bootstrap'
-    return dicts
+        proNumDicts[host] = proNums[i]
+        i += 1
+    return dicts, proNumDicts
 
 
 def startBootstrap(host, server):
@@ -33,17 +38,11 @@ def startBootstrap(host, server):
 
 def checkServerProcess():
     hostAndPorts = conf.get('tomcat.hosts')
-    serverlist = getBootstrap(hostAndPorts.split(','))
-
-    proNum = conf.get('tomcat.process.number')
-    if proNum == '':
-        proNum = 1
-    else:
-        proNum = int(proNum)
-
+    serverlist, proNums = getBootstrap(hostAndPorts.split(','))
     for host in serverlist:
         content = exeCmd.execJps(host)
         nowProNum = len(re.findall(serverlist.get(host), content))
+        proNum = int(proNums.get(host))
         if nowProNum < proNum:
             log.warn('{host} 节点 {proNum} 个 Bootstrap  服务未运行'.format(host=host, proNum=(proNum - nowProNum)))
             startBootstrap(host, 'Bootstrap')
