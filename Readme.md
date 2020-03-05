@@ -1,6 +1,6 @@
 
 
-###配置文件说明
+    ###配置文件说明
     config/hadoop(配置文件直接从hadoop安装目录下拉取)
         其中包括    core-site.xml、hdfs-site.xml、mapred-site.xml、yarn-site.xml、slaves
     config/hbase(配置文件直接从hadoop安装目录下拉取)
