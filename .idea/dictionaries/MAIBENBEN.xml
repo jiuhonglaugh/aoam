@@ -2,6 +2,7 @@
   <dictionary name="MAIBENBEN">
     <words>
       <w>ansible</w>
+      <w>aoam</w>
       <w>azkaban</w>
       <w>elasticsearch</w>
       <w>hbase</w>

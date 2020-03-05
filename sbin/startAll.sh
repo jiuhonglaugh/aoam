@@ -8,5 +8,5 @@ else
 fi
 echo "监控脚本执行时间："$(date "+%Y-%m-%d %H:%M:%S")
 
-$AOAM_HOME/bin/start-backend.sh $AOAM_HOME
-$AOAM_HOME/bin/bigdata.sh $AOAM_HOME
+$AOAM_HOME/sbin/start-backend.sh $AOAM_HOME
+$AOAM_HOME/sbin/start-bigdata.sh $AOAM_HOME
