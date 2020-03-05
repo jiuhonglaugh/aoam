@@ -1,10 +1,13 @@
 
 
-    配置文件说明
+配置文件说明
+
     config/hadoop(配置文件直接从hadoop安装目录下拉取)
         其中包括    core-site.xml、hdfs-site.xml、mapred-site.xml、yarn-site.xml、slaves
+    
     config/hbase(配置文件直接从hadoop安装目录下拉取)
         其中包括    habse-site.xml、regionservers
+    
     config/application.properties
         [zookeeper]
             zookeeper.hosts=IP:PORT,IP:PORT
@@ -33,7 +36,8 @@
             tomcat.hosts=IP:PORT,IP:PORT
             tomcat.process.number=1,1        '单个节点上有多少个Tomcat进程实例'
             tomcat.start.script.path=        'Tomcat 启动脚本路径'
-    调用逻辑
+调用逻辑
+
     sbin/start-All.sh
         sbin/start-backend.sh
             bin/tomcat.py
