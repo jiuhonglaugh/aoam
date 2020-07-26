@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import configparser
-
+import sys
 from os.path import dirname, abspath
 
 """
@@ -46,12 +46,15 @@ def getDicts():
 
 def getDict(section):
     dt = {}
-    list = cf.items(section)
-    for tuple in list:
-        dt[tuple[0]] = tuple[1]
-    return dt
-
+    try:
+        list = cf.items(section)
+        for tuple in list:
+            dt[tuple[0]] = tuple[1]
+        return dt
+    except:
+        print(configPath + ' 配置文件中不存在: ' + section + ' 配置项')
+        return None
 
 if __name__ == '__main__':
-    conf = getDicts(getAllSections())
-    print(conf.get("password"))
+    conf = getDict('azkaban1')
+    print(conf.get("azkaban.web.hosts"))

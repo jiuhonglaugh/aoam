@@ -115,7 +115,11 @@ def getResourceManager(keys, dicts):
 
 
 def getHistoryServer(keys, dicts):
-    key = keys.get('yarn.log.server.url').split(":")[1].replace('//', '')
+    try:
+        key = keys.get('yarn.log.server.url').split(":")[1].replace('//', '')
+    except:
+        log.warn('没有配置 JobHistoryServer 服务所在的服务器 默认在Namenode节点中启动')
+        key = keys.get('dfs.http.address').split(':')[0]
     if key in dicts:
         dicts[key] = dicts[key] + ',JobHistoryServer'
     else:

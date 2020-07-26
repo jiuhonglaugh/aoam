@@ -61,4 +61,6 @@ def checkServerProcess():
 
 
 if __name__ == '__main__':
+    if conf is None:
+        sys.exit()
     checkServerProcess()

@@ -80,5 +80,7 @@ def checkServerProcess():
             log.info(host + ' 节点 ' + 'Logstash' + '服务正在运行')
 
 if __name__ == '__main__':
+    if conf is None:
+        sys.exit()
     checkServerProcess()
     #checkServer()
